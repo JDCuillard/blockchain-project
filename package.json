@@ -1,0 +1,29 @@
+{
+  "name": "cryptozombies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build-contracts": "sol-merger \"./contracts/*.sol\" ./build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sol-merger": "^2.0.1"
+  },
+  "dependencies": {
+    "big-integer": "^1.6.48",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.15.4",
+    "vue-images-loaded": "^1.1.2",
+    "web3": "^1.2.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/web3-js/WebSocket-Node.git"
+  }
+}

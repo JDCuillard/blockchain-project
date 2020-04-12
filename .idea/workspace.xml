@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="12efde5d-8785-4a48-927f-955d1140adb7" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateZombie.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/CreateZombie.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="47" column="60" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getZombieCount.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zombiedapp/src/utils/getZombieCount.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zombiedapp/src/redux/store.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="42" lean-forward="true" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#70#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zombieCardContent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/zombieCardContent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zombiedapp/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getWeb3.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zombiedapp/src/utils/getWeb3.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="initBlockchain.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zombiedapp/src/utils/initBlockchain.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#0#71#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zombieCard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/zombieCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-34">
+              <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zombieChar.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/zombieChar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="52" column="96" selection-start-line="52" selection-start-column="96" selection-end-line="52" selection-end-column="96" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Solidity Contract" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>callback</find>
+      <find>txStatus</find>
+      <find>purchaser</find>
+      <find>totalZombieCount</find>
+      <find>png</find>
+      <find>shirtClass</find>
+      <find>catMode</find>
+      <find>eye</find>
+      <find>getColor</find>
+      <find>simple</find>
+      <find>console</find>
+      <find>return</find>
+      <find>state</find>
+      <find>jpg</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test/helpers/time.js" />
+        <option value="$PROJECT_DIR$/contracts/zombiehelper.sol" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/test/CryptoZombies.js" />
+        <option value="$PROJECT_DIR$/contracts/zombiefeeding.sol" />
+        <option value="$PROJECT_DIR$/deploymentNotes.txt" />
+        <option value="$PROJECT_DIR$/cryptozombies_abi.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/Dapp/index.html" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components.sol" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/PurchaserInventory.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/header.js" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/zombieCharComponent/ZombieChar.vue" />
+        <option value="$PROJECT_DIR$/zombiedapp/public/index.html" />
+        <option value="$PROJECT_DIR$/zombiedapp/public/manifest.json" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/zombieChar.css" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/pagination.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/ZombieInventory.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/zombie.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/FeedOnKitty.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/actions/types.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/reducers/index.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/index.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/pages/App.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/redux/configureStore.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/pages/MyZombieInventory.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/package.json" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/ActionButton.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/utils/getNumZombies.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/utils/getWeb3.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/redux/modules/czAppDuck.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/utils/initBlockchain.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/pages/ZombieInventory.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/pages/Greeting.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/utils/getZombieCount.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/pages/ChangeName.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/pages/LevelUp.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/pages/AttackZombie.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/TopBar.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/pages/FeedOnKitty.js" />
+        <option value="$PROJECT_DIR$/truffle-config.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/zombies/README.md" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/CreateZombie.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/redux/store.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/zombieCardContent.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/App.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/zombieCard.js" />
+        <option value="$PROJECT_DIR$/zombiedapp/src/components/zombieChar.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/zombiedapp/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/zombiedapp/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1536" />
+    <option name="height" value="862" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CryptoZombies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoZombies" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CryptoZombies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoZombies" type="462c0819:PsiDirectoryNode" />
+              <item name="zombiedapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CryptoZombies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoZombies" type="462c0819:PsiDirectoryNode" />
+              <item name="zombiedapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CryptoZombies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoZombies" type="462c0819:PsiDirectoryNode" />
+              <item name="zombiedapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CryptoZombies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoZombies" type="462c0819:PsiDirectoryNode" />
+              <item name="zombiedapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CryptoZombies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoZombies" type="462c0819:PsiDirectoryNode" />
+              <item name="zombiedapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jsx.switch.disabled" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zombiedapp/public" />
+      <recent name="$PROJECT_DIR$/zombiedapp/public/static" />
+      <recent name="$PROJECT_DIR$/zombiedapp/public/static/images" />
+      <recent name="$PROJECT_DIR$/zombiedapp/src/pages" />
+      <recent name="$PROJECT_DIR$/zombiedapp/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zombiedapp/src/images" />
+      <recent name="$PROJECT_DIR$/zombiedapp/src/pages" />
+      <recent name="$PROJECT_DIR$/zombiedapp/src/redux" />
+      <recent name="$PROJECT_DIR$/zombiedapp/src/components" />
+      <recent name="$PROJECT_DIR$/zombiedapp/src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="12efde5d-8785-4a48-927f-955d1140adb7" name="Default" comment="" />
+      <created>1581382290853</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581382290853</updated>
+      <workItem from="1581382294972" duration="19750000" />
+      <workItem from="1581790581693" duration="3328000" />
+      <workItem from="1582044035644" duration="3923000" />
+      <workItem from="1582070586961" duration="91000" />
+      <workItem from="1582246523330" duration="690000" />
+      <workItem from="1582404185419" duration="93000" />
+      <workItem from="1582405178562" duration="13549000" />
+      <workItem from="1582999600239" duration="2479000" />
+      <workItem from="1583029843072" duration="17503000" />
+      <workItem from="1583250756226" duration="25072000" />
+      <workItem from="1583514874180" duration="1888000" />
+      <workItem from="1583518747243" duration="42507000" />
+      <workItem from="1583771278186" duration="26002000" />
+      <workItem from="1583945078581" duration="5797000" />
+      <workItem from="1583955988392" duration="1184000" />
+      <workItem from="1583957299228" duration="598000" />
+      <workItem from="1583958376671" duration="278000" />
+      <workItem from="1583963959832" duration="276000" />
+      <workItem from="1584027191801" duration="5373000" />
+      <workItem from="1584112235924" duration="9100000" />
+      <workItem from="1584128699989" duration="5551000" />
+      <workItem from="1584210848730" duration="21109000" />
+      <workItem from="1584464681141" duration="591000" />
+      <workItem from="1584478540259" duration="8888000" />
+      <workItem from="1584546498694" duration="131000" />
+      <workItem from="1584555041459" duration="1351000" />
+      <workItem from="1584570222747" duration="12334000" />
+      <workItem from="1584744315539" duration="73619000" />
+      <workItem from="1585172836000" duration="228000" />
+      <workItem from="1585184419380" duration="245000" />
+      <workItem from="1585237009038" duration="1414000" />
+      <workItem from="1585240543704" duration="207000" />
+      <workItem from="1585244529710" duration="1437000" />
+      <workItem from="1585268352556" duration="28200000" />
+      <workItem from="1585438682794" duration="630000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="335416000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1536" height="862" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2298177" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.33896104" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3281046" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.328125" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2298177" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.328125" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.328125" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.33896104" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test/CryptoZombies.js</url>
+          <line>13</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/zombiedapp/src/pages/FeedOnKitty.js</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/zombiedapp/src/components/zombieCardContent.js</url>
+          <line>25</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/AppOld.js" />
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/nametag" />
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/pages/FeedOnKittyOld.js" />
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/nametag.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/zombieattack.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/zombiefeeding.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/youLose.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/youWin.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/zombieBattle.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/zombieLoser.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/zombieLoser2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/zombieWarrior.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/zombieWinner.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/zombieWinner2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/public/static/images/zombieWinner3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/zombiehelper.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/build/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/erc721.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/CryptoZombies.sol">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/zombieownership.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/redux/modules/czAppDuck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" column="87" lean-forward="true" selection-start-line="6" selection-start-column="87" selection-end-line="6" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/pages/Greeting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="111" selection-start-line="19" selection-start-column="111" selection-end-line="19" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/pages/ZombieInventory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/pages/MyZombieInventory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/pages/ChangeName.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/pages/LevelUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="106" column="17" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/pages/AttackZombie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/pages/FeedOnKitty.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#56#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/ActionButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/TopBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploymentNotes.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/1_initial_migration.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/2_crypto_zombies.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/3_crypto_zombies.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/truffle-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/utils/getWeb3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombies/README.md" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/CreateZombie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="47" column="60" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/zombies/README.md" />
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/utils/getZombieCount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/redux/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="42" lean-forward="true" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/zombieCardContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/utils/initBlockchain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/zombieCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zombiedapp/src/components/zombieChar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="52" column="96" selection-start-line="52" selection-start-column="96" selection-end-line="52" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
