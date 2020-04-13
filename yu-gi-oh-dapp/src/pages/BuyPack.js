@@ -48,7 +48,7 @@ class BuyPack extends Component {
             name= {pack.name}
             value = {pack.value}
             page = {pack.page}
-            zombieDNA={zombie.dna}
+            number={i + 1}
 
           />
         );

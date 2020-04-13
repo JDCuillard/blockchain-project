@@ -16,8 +16,7 @@ class ZombieCardContent extends Component {
     return (
       <Card.Content>
         <div>
-          {" "}
-          <ZombieChar DNA={this.props.zombie.zombieDNA} />{" "}
+
         </div>
         <Card.Header>
           Zombie ID: <b>{this.props.zombie.zombieId}</b> <br /> Name :{" "}

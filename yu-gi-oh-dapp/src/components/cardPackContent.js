@@ -15,11 +15,11 @@ class CardPackContent extends Component {
 
   render() {
     return (
-      <Link to={{ pathname: this.props.pack.page }}>
+      <Link to={{ pathname: this.props.pack.page}}>
         <Card.Content>
           <div>
             {" "}
-            <ZombieChar DNA={this.props.pack.zombieDNA} />{" "}
+            <ZombieChar number={this.props.pack.number} />{" "}
           </div>
           <Card.Header>
             Card Pack Name :{" "} <b>{this.props.pack.name}</b>
