@@ -12,6 +12,7 @@ import TopBar from "./components/TopBar";
 import Greeting from "./pages/Greeting";
 import MyCards from "./pages/MyCards";
 import BuyPack from "./pages/BuyPack";
+import CardPack1 from "./pages/cardPack1";
 
 import ZombieInventory from "./pages/ZombieInventory";
 import AttackZombie from "./pages/AttackZombie";
@@ -68,6 +69,7 @@ class App extends Component {
               <Route exact path="/" component={Greeting} />
               <Route exact path="/myCards" component={MyCards} />
               <Route exact path="/buyPack" component={BuyPack} />
+              <Route exact path="/cardPack1" component={CardPack1} />
               <Route exact path="/ZombieInventory" component={ZombieInventory} />
               {/* routes used in zombie action modal */}
               <Route exact path="/AttackZombie" component={AttackZombie} />

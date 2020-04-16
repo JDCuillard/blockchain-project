@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
 import { connect } from "react-redux";
-import ZombieCard from "../components/zombieCard";
+import PlayingCard from "../components/card";
 
 function mapStateToProps(state) {
   return {
@@ -19,51 +19,46 @@ class MyCards extends Component {
   };
 
   componentDidMount = async () => {
-    await this.makeZombieCards();
+    await this.makeCards();
   };
 
   onChange = async (e, pageInfo) => {
     await this.setState({ activePage: pageInfo.activePage });
-    this.makeZombieCards();
+    this.makeCards();
   };
 
   handleInputChange = async (e, { value }) => {
     await this.setState({ activePage: value });
-    this.makeZombieCards();
+    this.makeCards();
   };
-  makeZombieCards = async () => {
-    const myZombies = await this.props.CZ.methods
-      .getZombiesByOwner(this.props.userAddress)
-      .call();
-    let zombieTable = [];
+
+  makeCards = async () => {
+    const cards = [{name : "Card 1", desc: "description for card 1", value: "a"},
+                       {name : "Card 2", desc: "description for card 2", value: "b"},
+                       {name : "Card 3", desc: "description for card 3", value: "c"},
+                       {name : "Card 4", desc: "description for card 4", value: "d"},
+                       {name : "Card 5", desc: "description for card 5", value: "e"}
+                     ];
+    let cardTable = [];
     for (
-      var i = this.state.activePage * 9 - 9;
-      i < this.state.activePage * 9;
+      var i = 0;
+      i < cards.length;
       i++
     ) {
       try {
-        let z = myZombies[i];
-        let zombie = await this.props.CZ.methods.zombies(z).call();
-        let myDate = new Date(zombie.readyTime * 1000).toLocaleString();
-        zombieTable.push(
-          <ZombieCard
-            key={z}
-            zombieId={z}
-            zombieName={zombie.name}
-            zombieDNA={zombie.dna}
-            zombieLevel={zombie.level}
-            zombieReadyTime={myDate}
-            zombieWinCount={zombie.winCount}
-            zombieLossCount={zombie.lossCount}
-            zombieOwner={this.props.userAddress}
-            myOwner={true}
+        let pack = cards[i];
+        cardTable.push(
+          <PlayingCard
+            name= {pack.name}
+            value = {pack.value}
+            desc = {pack.desk}
           />
         );
       } catch {
         break;
       }
     }
-    this.setState({ zombieTable });
+    this.setState({ cardTable });
   };
 
   render() {
@@ -95,7 +90,7 @@ class MyCards extends Component {
           </Grid.Column>
         </Grid>
         <br /> <br />
-        <Card.Group> {this.state.zombieTable} </Card.Group>
+        <Card.Group> {this.state.cardTable} </Card.Group>
       </div>
     );
   }

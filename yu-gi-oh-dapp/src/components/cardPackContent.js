@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import ZombieChar from "./zombieChar";
+import CardPackImage from "./cardPackImage";
 
 class CardPackContent extends Component {
   truncate = (text, startChars, endChars) => {
@@ -19,7 +19,7 @@ class CardPackContent extends Component {
         <Card.Content>
           <div>
             {" "}
-            <ZombieChar number={this.props.pack.number} />{" "}
+            <CardPackImage number={this.props.pack.packNumber} />{" "}
           </div>
           <Card.Header>
             Card Pack Name :{" "} <b>{this.props.pack.name}</b>

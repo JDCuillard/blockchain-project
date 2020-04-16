@@ -32,7 +32,7 @@ class BuyPack extends Component {
                        {name : "Card Pack 4", value: "d", page: "/cardPack4"},
                        {name : "Card Pack 5", value: "e", page: "/cardPack5"}
                      ];
-    let zombieTable = [];
+    let cardPackTable = [];
     for (
       var i = 0;
       i < cardPacks.length;
@@ -40,23 +40,19 @@ class BuyPack extends Component {
     ) {
       try {
         let pack = cardPacks[i];
-        let z = myZombies[i];
-        let zombie = await this.props.CZ.methods.zombies(z).call();
-        let myDate = new Date(zombie.readyTime * 1000).toLocaleString();
-        zombieTable.push(
+        cardPackTable.push(
           <CardPack
             name= {pack.name}
             value = {pack.value}
             page = {pack.page}
-            number={i + 1}
-
+            packNumber={i + 1}
           />
         );
       } catch {
         break;
       }
     }
-    this.setState({ zombieTable });
+    this.setState({ cardPackTable });
   };
 
   render() {
@@ -89,7 +85,7 @@ class BuyPack extends Component {
           </Grid.Column>
         </Grid>
         <br /> <br />
-        <Card.Group> {this.state.zombieTable} </Card.Group>
+        <Card.Group> {this.state.cardPackTable} </Card.Group>
       </div>
     );
   }
