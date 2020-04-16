@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
 import { connect } from "react-redux";
-import CardPack from "../components/cardPack";
+import PlayingCard from "../components/card";
 
 function mapStateToProps(state) {
   return {
@@ -19,7 +19,7 @@ class CardPack1 extends Component {
   };
 
   componentDidMount = async () => {
-    await this.makeCardPackCards();
+    await this.makeCards();
   };
 
   makeCards = async () => {
