@@ -23,11 +23,11 @@ class CardPack1 extends Component {
   };
 
   makeCards = async () => {
-    const cards = [{name : "Card 1", desc: "description for card 1", value: "a"},
-                       {name : "Card 2", desc: "description for card 2", value: "b"},
-                       {name : "Card 3", desc: "description for card 3", value: "c"},
-                       {name : "Card 4", desc: "description for card 4", value: "d"},
-                       {name : "Card 5", desc: "description for card 5", value: "e"}
+    const cards = [{name : "Card 1", id: 1, desc: "description for card 1", value: "a"},
+                   {name : "Card 2", id: 2, desc: "description for card 2", value: "b"},
+                   {name : "Card 3", id: 3, desc: "description for card 3", value: "c"},
+                   {name : "Card 4", id: 4, desc: "description for card 4", value: "d"},
+                   {name : "Card 5", id: 5, desc: "description for card 5", value: "e"}
                      ];
     let cardTable = [];
     for (
@@ -39,9 +39,10 @@ class CardPack1 extends Component {
         let pack = cards[i];
         cardTable.push(
           <PlayingCard
-            name= {pack.name}
+            name = {pack.name}
+            id = {pack.id}
             value = {pack.value}
-            desc = {pack.desk}
+            desc = {pack.desc}
           />
         );
       } catch {
@@ -55,8 +56,8 @@ class CardPack1 extends Component {
     return (
       <div>
         <hr />
-        <h2> Your Cards </h2>
-        This is a collection of cards you own.
+        <h2> Card Pack 1 </h2>
+        These are that cards that come with card pack 1.
         <hr />
         <Grid columns={2} verticalAlign="middle">
           <Grid.Column>
