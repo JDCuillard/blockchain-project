@@ -13,6 +13,9 @@ import Greeting from "./pages/Greeting";
 import MyCards from "./pages/MyCards";
 import BuyPack from "./pages/BuyPack";
 import CardPack1 from "./pages/cardPack1";
+import CardPack2 from "./pages/cardPack2";
+import CardPack3 from "./pages/cardPack3";
+import CardPack4 from "./pages/cardPack4";
 
 import ZombieInventory from "./pages/ZombieInventory";
 import AttackZombie from "./pages/AttackZombie";
@@ -70,6 +73,9 @@ class App extends Component {
               <Route exact path="/myCards" component={MyCards} />
               <Route exact path="/buyPack" component={BuyPack} />
               <Route exact path="/cardPack1" component={CardPack1} />
+              <Route exact path="/cardPack2" component={CardPack2} />
+              <Route exact path="/cardPack3" component={CardPack3} />
+              <Route exact path="/cardPack4" component={CardPack4} />
               <Route exact path="/ZombieInventory" component={ZombieInventory} />
               {/* routes used in zombie action modal */}
               <Route exact path="/AttackZombie" component={AttackZombie} />
