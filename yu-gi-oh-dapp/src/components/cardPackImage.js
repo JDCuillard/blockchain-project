@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./cardPackImage.css";
 
-class CardPackContent extends Component {
+class CardPackImage extends Component {
 
     currentCardPack ()  {
         let i = parseInt(this.props.number);
@@ -18,4 +18,4 @@ class CardPackContent extends Component {
     }
 }
 
-export default CardPackContent;
+export default CardPackImage;

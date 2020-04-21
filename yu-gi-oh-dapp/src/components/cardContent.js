@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import CardPackImage from "./cardPackImage";
+import CardImage from "./cardImage";
 
 class CardContent extends Component {
   truncate = (text, startChars, endChars) => {
@@ -17,7 +17,7 @@ class CardContent extends Component {
     return (
         <Card.Content>
           <div>
-            <CardPackImage number={1} />{" "}
+            <CardImage image_link={this.props.card.image_link} />{" "}
           </div>
           <Card.Header>
             Name : <b>{this.props.card.name}</b>
@@ -25,7 +25,6 @@ class CardContent extends Component {
           <Card.Description>
             ID: {this.props.card.id}<br />
             Description: {this.props.card.desc} <br />
-            Price: {this.props.card.value} <br />
           </Card.Description>
         </Card.Content>
     );

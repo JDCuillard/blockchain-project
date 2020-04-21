@@ -6,43 +6,56 @@ import PlayingCard from "../components/card";
 function mapStateToProps(state) {
   return {
     CZ: state.CZ,
-    userZombieCount: state.userZombieCount,
+    totalZombieCount: state.totalZombieCount,
     userAddress: state.userAddress
   };
 }
 
 class CardPack1 extends Component {
   state = {
-    ZombieTable: [],
+    CardTable: [],
     activePage: 1,
-    totalPages: Math.ceil(this.props.userZombieCount / 9)
+    totalPages: Math.ceil(40 / 9)
   };
 
   componentDidMount = async () => {
     await this.makeCards();
   };
+  onChange = async (e, pageInfo) => {
+     await this.setState({ activePage: pageInfo.activePage });
+     this.makeCards();
+   };
+
+   handleInputChange = async (e, { value }) => {
+     await this.setState({ activePage: value });
+     this.makeCards();
+   };
 
   makeCards = async () => {
-    const cards = [{name : "Card 1", id: 1, desc: "description for card 1", value: "a"},
-                   {name : "Card 2", id: 2, desc: "description for card 2", value: "b"},
-                   {name : "Card 3", id: 3, desc: "description for card 3", value: "c"},
-                   {name : "Card 4", id: 4, desc: "description for card 4", value: "d"},
-                   {name : "Card 5", id: 5, desc: "description for card 5", value: "e"}
-                     ];
+
+    var request = new XMLHttpRequest();
+    request.open("GET", "../../static/cardData/cardinfo.json", false);
+    request.send(null)
+    let cardInformation = JSON.parse(request.responseText);
+
+    const pack1 = [89631139,45231177,32274490,46986414,91152256,4614116,77007920,63102017,11868825,86318356,
+                        83887306,4206964,50045299,40374923,40374923,90963488,34460851,36121917,2863439,37313348,
+                        75356564,15401633,57305373,40826495,39004808,18710707,22910685,44287299,85705804,59197169,
+                        46130346,24094653,72842870,74677422,76211194,72302403,10202894,54652250,7089711,55444629];
     let cardTable = [];
     for (
-      var i = 0;
-      i < cards.length;
+      var i = this.state.activePage * 9 - 9;
+      i < this.state.activePage * 9;
       i++
     ) {
       try {
-        let pack = cards[i];
         cardTable.push(
           <PlayingCard
-            name = {pack.name}
-            id = {pack.id}
-            value = {pack.value}
-            desc = {pack.desc}
+            name = {cardInformation[pack1[i]]["name"]}
+            id = {pack1[i]}
+            desc = {cardInformation[pack1[i]]["desc"]}
+            small_image_link = {cardInformation[pack1[i]]["card_images"]["image_url_small"]}
+            image_link = {cardInformation[pack1[i]]["card_images"]["image_url"]}
           />
         );
       } catch {
