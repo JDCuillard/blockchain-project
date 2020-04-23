@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
+import { Card, Grid, Input, Segment, Pagination, Menu } from "semantic-ui-react";
 import { connect } from "react-redux";
 import PlayingCard from "../components/card";
+import ActionButton from "../components/ActionButton";
 
 function mapStateToProps(state) {
   return {
@@ -66,12 +67,35 @@ class CardPack1 extends Component {
   };
 
   render() {
+    const buyPack1 = (
+      <div>
+        {" "}
+        Buy Pack <br /> x ether{" "}
+      </div>
+    );
     return (
       <div>
+        <Menu style={{ marginTop: "10px", backgroundColor: "Transperent" }}>
+          <Menu.Item>
+            <h2> Legend of Blue Eyes White Dragon </h2>
+          </Menu.Item>
+          <Menu.Item>
+            As the first set in the Yu-Gi-Oh! Trading Card Game, Legend of Blue Eyes White Dragon <br/>
+            introduced players to the game. Important features and concepts introduced with this <br/>
+            set include Normal, Effect, Flip Effect and Fusion Monsters, as well as the concepts <br/>
+            of Normal, Tribute, and Fusion Summoning.
+          </Menu.Item>
+          <Menu.Item position="right">
+            <ActionButton
+              pathname="/AttackZombie"
+              buttonLabel={buyPack1}
+              data={this.props}
+            />
+          </Menu.Item>
+        </Menu>
         <hr />
-        <h2> Card Pack 1 </h2>
-        These are that cards that come with card pack 1.
-        <hr />
+
+
         <Grid columns={2} verticalAlign="middle">
           <Grid.Column>
             <Segment secondary>

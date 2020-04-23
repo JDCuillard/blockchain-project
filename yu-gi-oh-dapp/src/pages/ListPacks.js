@@ -26,11 +26,10 @@ class ListPacks extends Component {
     const myZombies = await this.props.CZ.methods
       .getZombiesByOwner(this.props.userAddress)
       .call();
-    const cardPacks = [{name : "Card Pack 1", value: "a", page: "/cardPack1"},
-                       {name : "Card Pack 2", value: "b", page: "/cardPack2"},
-                       {name : "Card Pack 3", value: "c", page: "/cardPack3"},
-                       {name : "Card Pack 4", value: "d", page: "/cardPack4"},
-                       {name : "Card Pack 5", value: "e", page: "/cardPack5"}
+    const cardPacks = [{name : "Legend of Blue Eyes White Dragon", value: "a", page: "/cardPack1"},
+                       {name : "Pharaoh's Servant", value: "b", page: "/cardPack2"},
+                       {name : "Labyrinth of Nightmare", value: "c", page: "/cardPack3"},
+                       {name : "Ancient Sanctuary", value: "d", page: "/cardPack4"},
                      ];
     let cardPackTable = [];
     for (

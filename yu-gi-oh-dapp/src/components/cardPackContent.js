@@ -22,7 +22,7 @@ class CardPackContent extends Component {
             <CardPackImage number={this.props.pack.packNumber} />{" "}
           </div>
           <Card.Header>
-            Card Pack Name :{" "} <b>{this.props.pack.name}</b>
+            Card Pack {this.props.pack.packNumber} :{" "} <b>{this.props.pack.name}</b>
           </Card.Header>
           <Card.Description>
             Price: {this.props.pack.value} <br />

@@ -41,7 +41,7 @@ class PlayingCard extends Component {
         <Modal open={this.state.modalOpen} onClose={this.handleClose}>
           <Header
             icon="browser"
-            content="Here are details about the card you clicked"
+            content="Here are details about this card"
           />
 
           <Modal.Content>

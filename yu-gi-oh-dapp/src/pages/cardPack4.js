@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
+import { Card, Grid, Input, Segment, Pagination, Menu } from "semantic-ui-react";
 import { connect } from "react-redux";
 import PlayingCard from "../components/card";
+import ActionButton from "../components/ActionButton";
 
 function mapStateToProps(state) {
   return {
@@ -66,11 +67,29 @@ class CardPack1 extends Component {
   };
 
   render() {
+    const buyPack4 = (
+      <div>
+        {" "}Buy Pack <br /> x ether{" "}
+      </div>
+    );
     return (
       <div>
-        <hr />
-        <h2> Card Pack 4 </h2>
-        These are that cards that come with card pack 4.
+      <Menu style={{ marginTop: "10px", backgroundColor: "Transperent" }}>
+        <Menu.Item>
+          <h2> Ancient Sanctuary </h2>
+        </Menu.Item>
+        <Menu.Item>
+          Ancient Sanctuary is a Booster Pack, which is a combination of the Japanese sets The Sanctuary in the Sky
+          <br/>and Pharaoh's Inheritance. This is one of the two Booster Packs combined into Dark Revelation Volume 2.
+        </Menu.Item>
+        <Menu.Item position="right">
+          <ActionButton
+            pathname="/AttackZombie"
+            buttonLabel={buyPack4}
+            data={this.props}
+          />
+        </Menu.Item>
+      </Menu>
         <hr />
         <Grid columns={2} verticalAlign="middle">
           <Grid.Column>

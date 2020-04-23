@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
+import { Card, Grid, Input, Segment, Pagination, Menu } from "semantic-ui-react";
 import { connect } from "react-redux";
 import PlayingCard from "../components/card";
+import ActionButton from "../components/ActionButton";
 
 function mapStateToProps(state) {
   return {
@@ -65,12 +66,33 @@ class CardPack1 extends Component {
     this.setState({ cardTable });
   };
 
+
+
   render() {
+    const buyPack2 = (
+      <div>
+      {" "}
+      Buy Pack <br /> x ether{" "}
+      </div>
+    );
+
     return (
       <div>
-        <hr />
-        <h2> Card Pack 2 </h2>
-        These are that cards that come with card pack 2.
+        <Menu style={{ marginTop: "10px", backgroundColor: "Transperent" }}>
+          <Menu.Item>
+            <h2> Pharaoh's Servant </h2>
+          </Menu.Item>
+          <Menu.Item>
+            Pharaoh's Servant is a Booster Pack, which is a combination of the Japanese sets Curse of Anubis and Thousand Eyes Bible.
+          </Menu.Item>
+          <Menu.Item position="right">
+            <ActionButton
+              pathname="/AttackZombie"
+              buttonLabel={buyPack2}
+              data={this.props}
+            />
+          </Menu.Item>
+        </Menu>
         <hr />
         <Grid columns={2} verticalAlign="middle">
           <Grid.Column>

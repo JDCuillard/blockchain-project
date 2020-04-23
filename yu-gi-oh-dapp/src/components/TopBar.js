@@ -47,13 +47,6 @@ class TopBar extends Component {
             </Link>
           </Menu.Item>
         </Menu>
-        <div className="center">
-          <h2>Welcome To our Yu-Gi-Oh Trading card Game</h2>
-        </div>
-        Your account address: {this.props.userAddress}
-        <br />
-        You own {this.props.userZombieCount} zombie(s) out of a total of approximately {this.props.totalZombieCount}.
-        <hr />
       </div>
     );
   }

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
+import { Card, Grid, Input, Segment, Pagination, Menu } from "semantic-ui-react";
 import { connect } from "react-redux";
 import PlayingCard from "../components/card";
+import ActionButton from "../components/ActionButton";
 
 function mapStateToProps(state) {
   return {
@@ -66,11 +67,30 @@ class CardPack1 extends Component {
   };
 
   render() {
+    const buyPack3 = (
+      <div>
+      {" "}
+      Buy Pack <br /> x ether{" "}
+      </div>
+    );
     return (
       <div>
-        <hr />
-        <h2> Card Pack 3 </h2>
-        These are that cards that come with card pack 3.
+        <Menu style={{ marginTop: "10px", backgroundColor: "Transperent" }}>
+          <Menu.Item>
+            <h2> Labyrinth of Nightmare </h2>
+          </Menu.Item>
+          <Menu.Item>
+            Labyrinth of Nightmare is a Booster Pack that is an amalgamation 
+            <br/> of the Japanese sets Labyrinth of Nightmare and Spell of Mask.
+          </Menu.Item>
+          <Menu.Item position="right">
+            <ActionButton
+              pathname="/AttackZombie"
+              buttonLabel={buyPack3}
+              data={this.props}
+            />
+          </Menu.Item>
+        </Menu>
         <hr />
         <Grid columns={2} verticalAlign="middle">
           <Grid.Column>
