@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
+import { Card, Grid, Input, Segment, Pagination, Menu } from "semantic-ui-react";
 import { connect } from "react-redux";
 import CardPack from "../components/cardPack";
 
@@ -57,10 +57,15 @@ class ListPacks extends Component {
   render() {
     return (
       <div>
-        <hr />
-        <h2> Buy a new Card Pack </h2>
-        Buy a new card pack to add to your dueling arsenal. In each pack, is 40 predetermined Cards
-        as well as 5 random cards. They can be lucky. You can keep these cards or put them up for auction!
+        <Menu style={{ marginTop: "10px", backgroundColor: "Transperent" }}>
+          <Menu.Item>
+            <h2> Buy a card pack! </h2>
+          </Menu.Item>
+          <Menu.Item>
+            40 pre-determined cards <br/>
+            5 random cards
+          </Menu.Item>
+        </Menu>
         <hr />
         <Grid columns={2} verticalAlign="middle">
           <Grid.Column>
