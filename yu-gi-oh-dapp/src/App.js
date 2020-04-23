@@ -11,7 +11,7 @@ import TopBar from "./components/TopBar";
 
 import Greeting from "./pages/Greeting";
 import MyCards from "./pages/MyCards";
-import BuyPack from "./pages/BuyPack";
+import ListPacks from "./pages/ListPacks";
 import CardPack1 from "./pages/cardPack1";
 import CardPack2 from "./pages/cardPack2";
 import CardPack3 from "./pages/cardPack3";
@@ -71,7 +71,7 @@ class App extends Component {
             <div>
               <Route exact path="/" component={Greeting} />
               <Route exact path="/myCards" component={MyCards} />
-              <Route exact path="/buyPack" component={BuyPack} />
+              <Route exact path="/ListPacks" component={ListPacks} />
               <Route exact path="/cardPack1" component={CardPack1} />
               <Route exact path="/cardPack2" component={CardPack2} />
               <Route exact path="/cardPack3" component={CardPack3} />

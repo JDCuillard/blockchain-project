@@ -11,7 +11,7 @@ function mapStateToProps(state) {
   };
 }
 
-class BuyPack extends Component {
+class ListPacks extends Component {
   state = {
     ZombieTable: [],
     activePage: 1,
@@ -91,4 +91,4 @@ class BuyPack extends Component {
   }
 }
 
-export default connect(mapStateToProps)(BuyPack);
+export default connect(mapStateToProps)(ListPacks);

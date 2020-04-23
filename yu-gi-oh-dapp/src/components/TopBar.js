@@ -24,7 +24,7 @@ class TopBar extends Component {
       <div>
         <Menu style={{ marginTop: "10px", backgroundColor: "Salmon" }}>
         <Menu.Item>
-          <Link to={{ pathname: "/BuyPack" }}>
+          <Link to={{ pathname: "/ListPacks" }}>
             <Button primary>Buy a Card Pack</Button>
           </Link>
         </Menu.Item>
