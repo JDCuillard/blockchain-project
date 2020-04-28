@@ -50,8 +50,8 @@ class MyCards extends Component {
         cardTable.push(
           <PlayingCard
             name= {pack.name}
+            desc = {pack.desc}
             value = {pack.value}
-            desc = {pack.desk}
           />
         );
       } catch {
