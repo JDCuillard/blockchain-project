@@ -90,7 +90,7 @@ class CardPack extends Component {
             <td>
               <h2> {this.state.packInfo["title"]} </h2>
             </td>
-            <td width="100px" align="right">
+            <td width="125px" align="right">
               <ActionButton
                 pathname="/AttackZombie"
                 buttonLabel={buyPack}
