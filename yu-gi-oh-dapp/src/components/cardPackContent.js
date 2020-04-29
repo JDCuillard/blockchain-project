@@ -15,7 +15,7 @@ class CardPackContent extends Component {
 
   render() {
     return (
-      <Link to={{ pathname: this.props.pack.page}}>
+      <Link to={{ pathname: this.props.pack.page, packNumber: this.props.pack.packNumber}}>
         <Card.Content>
           <div>
             {" "}

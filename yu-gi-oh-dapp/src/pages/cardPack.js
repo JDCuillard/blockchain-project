@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Card, Grid, Input, Segment, Pagination, Menu } from "semantic-ui-react";
+import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
 import { connect } from "react-redux";
 import PlayingCard from "../components/card";
 import ActionButton from "../components/ActionButton";
+import { Menu } from "semantic-ui-react";
 
 function mapStateToProps(state) {
   return {
@@ -12,11 +13,14 @@ function mapStateToProps(state) {
   };
 }
 
-class CardPack1 extends Component {
+class CardPack extends Component {
   state = {
     CardTable: [],
     activePage: 1,
-    totalPages: Math.ceil(40 / 9)
+    totalPages: Math.ceil(40 / 10),
+    title: "",
+    packInfo: {}
+
   };
 
   componentDidMount = async () => {
@@ -32,31 +36,37 @@ class CardPack1 extends Component {
      this.makeCards();
    };
 
+
   makeCards = async () => {
 
     var request = new XMLHttpRequest();
     request.open("GET", "../../static/cardData/cardinfo.json", false);
-    request.send(null)
+    request.send(null);
     let cardInformation = JSON.parse(request.responseText);
 
-    const pack = [65403020,39674352,66073051,2468169,65957473,91345518,63012333,90407382,31812496,53890795,
-                        25773409,52768103,84550200,87340664,50823978,83228073,55001420,18590133,18378582,53776525,
-                        44762290,98045062,17655904,80161395,10035717,56433456,82828051,45311864,82705573,18190572,
-                        44595286,71983925,44472639,70861343,79649195,26566878,52550973,51838385,51616747,50593156];
+    let packNumber = this.props.location.packNumber;
+
+    let requestPackInfo = new XMLHttpRequest();
+    requestPackInfo.open("GET", "../../static/cardData/cardPack.json", false);
+    requestPackInfo.send(null);
+    let packInfo = JSON.parse(requestPackInfo.responseText)[packNumber];
+    this.setState({ packInfo });
+
+
     let cardTable = [];
     for (
-      var i = this.state.activePage * 9 - 9;
-      i < this.state.activePage * 9;
+      var i = this.state.activePage * 10 - 10;
+      i < this.state.activePage * 10;
       i++
     ) {
       try {
         cardTable.push(
           <PlayingCard
-            name = {cardInformation[pack[i]]["name"]}
-            id = {pack[i]}
-            desc = {cardInformation[pack[i]]["desc"]}
-            small_image_link = {cardInformation[pack[i]]["card_images"]["image_url_small"]}
-            image_link = {cardInformation[pack[i]]["card_images"]["image_url"]}
+            name = {cardInformation[packInfo["cards"][i]]["name"]}
+            id = {packInfo["cards"][i]}
+            desc = {cardInformation[packInfo["cards"][i]]["desc"]}
+            small_image_link = {cardInformation[packInfo["cards"][i]]["card_images"]["image_url_small"]}
+            image_link = {cardInformation[packInfo["cards"][i]]["card_images"]["image_url"]}
           />
         );
       } catch {
@@ -67,30 +77,37 @@ class CardPack1 extends Component {
   };
 
   render() {
-    const buyPack4 = (
+    const buyPack = (
       <div>
-        {" "}Buy Pack <br /> x ether{" "}
+        {" "}
+        Buy Pack <br /> {this.state.packInfo["price"]} ether{" "}
       </div>
     );
     return (
       <div>
-      <Menu style={{ marginTop: "10px", backgroundColor: "Transperent" }}>
-        <Menu.Item>
-          <h2> Ancient Sanctuary </h2>
-        </Menu.Item>
-        <Menu.Item>
-          Ancient Sanctuary is a Booster Pack, which is a combination of the Japanese sets The Sanctuary in the Sky
-          <br/>and Pharaoh's Inheritance. This is one of the two Booster Packs combined into Dark Revelation Volume 2.
-        </Menu.Item>
-        <Menu.Item position="right">
-          <ActionButton
-            pathname="/AttackZombie"
-            buttonLabel={buyPack4}
-            data={this.props}
-          />
-        </Menu.Item>
-      </Menu>
+        <table width="100%">
+          <tr>
+            <td>
+              <h2> {this.state.packInfo["title"]} </h2>
+            </td>
+            <td width="100px" align="right">
+              <ActionButton
+                pathname="/AttackZombie"
+                buttonLabel={buyPack}
+                data={this.props}
+                packNumber={this.props.location.packNumber}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {this.state.packInfo["desc"]}
+            </td>
+          </tr>
+        </table>
         <hr />
+
+
         <Grid columns={2} verticalAlign="middle">
           <Grid.Column>
             <Segment secondary>
@@ -113,10 +130,10 @@ class CardPack1 extends Component {
           </Grid.Column>
         </Grid>
         <br /> <br />
-        <Card.Group> {this.state.cardTable} </Card.Group>
+        <Card.Group centered items={this.state.cardTable}> {this.state.cardTable} </Card.Group>
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(CardPack1);
+export default connect(mapStateToProps)(CardPack);
