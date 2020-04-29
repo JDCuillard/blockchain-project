@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Card, Grid, Input, Segment, Pagination, Menu } from "semantic-ui-react";
+import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
 import { connect } from "react-redux";
 import PlayingCard from "../components/card";
 import ActionButton from "../components/ActionButton";
+import { Menu } from "semantic-ui-react";
 
 function mapStateToProps(state) {
   return {
@@ -16,7 +17,7 @@ class CardPack1 extends Component {
   state = {
     CardTable: [],
     activePage: 1,
-    totalPages: Math.ceil(40 / 9)
+    totalPages: Math.ceil(40 / 10)
   };
 
   componentDidMount = async () => {
@@ -45,8 +46,8 @@ class CardPack1 extends Component {
                         46130346,24094653,72842870,74677422,76211194,72302403,10202894,54652250,7089711,55444629];
     let cardTable = [];
     for (
-      var i = this.state.activePage * 9 - 9;
-      i < this.state.activePage * 9;
+      var i = this.state.activePage * 10 - 10;
+      i < this.state.activePage * 10;
       i++
     ) {
       try {
@@ -82,7 +83,7 @@ class CardPack1 extends Component {
           <Menu.Item>
             As the first set in the Yu-Gi-Oh! Trading Card Game, Legend of Blue Eyes White Dragon <br/>
             introduced players to the game. Important features and concepts introduced with this <br/>
-            set include Normal, Effect, Flip Effect and Fusion Monsters, as well as the concepts <br/>
+            set include Normal, Effect, Flip Effect and Fusion Monsters, as well as the concepts<br/>
             of Normal, Tribute, and Fusion Summoning.
           </Menu.Item>
           <Menu.Item position="right">
@@ -90,6 +91,7 @@ class CardPack1 extends Component {
               pathname="/AttackZombie"
               buttonLabel={buyPack1}
               data={this.props}
+              packNumber={1}
             />
           </Menu.Item>
         </Menu>
@@ -118,7 +120,7 @@ class CardPack1 extends Component {
           </Grid.Column>
         </Grid>
         <br /> <br />
-        <Card.Group> {this.state.cardTable} </Card.Group>
+        <Card.Group centered items={this.state.cardTable}> {this.state.cardTable} </Card.Group>
       </div>
     );
   }

@@ -16,7 +16,7 @@ class CardPack1 extends Component {
   state = {
     CardTable: [],
     activePage: 1,
-    totalPages: Math.ceil(40 / 9)
+    totalPages: Math.ceil(40 / 10)
   };
 
   componentDidMount = async () => {
@@ -45,8 +45,8 @@ class CardPack1 extends Component {
                         31447217,23615409,5265750,83994646,22959079,93108433,23171610,2311603,98139712,31477025];
     let cardTable = [];
     for (
-      var i = this.state.activePage * 9 - 9;
-      i < this.state.activePage * 9;
+      var i = this.state.activePage * 10 - 10;
+      i < this.state.activePage * 10;
       i++
     ) {
       try {
@@ -90,6 +90,7 @@ class CardPack1 extends Component {
               pathname="/AttackZombie"
               buttonLabel={buyPack2}
               data={this.props}
+              packNumber={2}
             />
           </Menu.Item>
         </Menu>

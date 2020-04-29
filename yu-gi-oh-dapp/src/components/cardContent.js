@@ -15,12 +15,12 @@ class CardContent extends Component {
 
   render() {
     return (
-        <Card.Content>
-          <div>
+        <Card.Content textAlign="center">
+          <div class="center aligned header">
             <CardImage image_link={this.props.card.image_link} />{" "}
           </div>
           <Card.Header>
-            Name : <b>{this.props.card.name}</b>
+            <b>{this.props.card.name}</b>
           </Card.Header>
           <Card.Description>
             ID: {this.props.card.id}<br />

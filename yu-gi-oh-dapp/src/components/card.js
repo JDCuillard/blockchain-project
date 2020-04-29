@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
 import ActionButton from "./ActionButton";
 import CardContent from "./cardContent";
-import CardPreview from "./cardPreview";
-import CardPackImage from "./cardPackImage";
+import CardImage from "./cardImage";
 
 class PlayingCard extends Component {
   state = {
@@ -25,7 +24,8 @@ class PlayingCard extends Component {
     //   </Card>
     // );
     return (
-      <Card style={{ backgroundColor: "LightYellow" }} raised>
+      <Card style={{ backgroundColor: "LightYellow", width:"200px"}} raised>
+
         <ReactTooltip delayShow={400} />
 
         <a
@@ -33,7 +33,14 @@ class PlayingCard extends Component {
           data-tip="Click on me to view details about this card"
           onClick={e => this.modalOpen(e)}
         >
-          <CardPreview card={this.props} />
+          <Card.Content>
+            <div>
+              <CardImage image_link={this.props.small_image_link} />{" "}
+            </div>
+            <Card.Header>
+              <b>{this.props.name}</b>
+            </Card.Header>
+          </Card.Content>
         </a>
 
         {/* a modal is like an "alert", it's a popup that greys out the lower screen and displays its content on top of everything */}

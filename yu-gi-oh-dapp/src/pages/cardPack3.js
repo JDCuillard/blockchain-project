@@ -16,7 +16,7 @@ class CardPack1 extends Component {
   state = {
     CardTable: [],
     activePage: 1,
-    totalPages: Math.ceil(40 / 9)
+    totalPages: Math.ceil(40 / 10)
   };
 
   componentDidMount = async () => {
@@ -45,8 +45,8 @@ class CardPack1 extends Component {
                         57579381,32541773,67105242,66989694,41855169,40133511,77527210,40916023,45894482,44072894];
     let cardTable = [];
     for (
-      var i = this.state.activePage * 9 - 9;
-      i < this.state.activePage * 9;
+      var i = this.state.activePage * 10 - 10;
+      i < this.state.activePage * 10;
       i++
     ) {
       try {
@@ -80,7 +80,7 @@ class CardPack1 extends Component {
             <h2> Labyrinth of Nightmare </h2>
           </Menu.Item>
           <Menu.Item>
-            Labyrinth of Nightmare is a Booster Pack that is an amalgamation 
+            Labyrinth of Nightmare is a Booster Pack that is an amalgamation
             <br/> of the Japanese sets Labyrinth of Nightmare and Spell of Mask.
           </Menu.Item>
           <Menu.Item position="right">
@@ -88,6 +88,7 @@ class CardPack1 extends Component {
               pathname="/AttackZombie"
               buttonLabel={buyPack3}
               data={this.props}
+              packNumber={3}
             />
           </Menu.Item>
         </Menu>

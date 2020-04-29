@@ -20,6 +20,7 @@ class ActionButton extends Component {
     };
 
     const pathName = this.props.pathname;
+    const packNumber = this.props.packNumber;
     const buttonLabel = this.props.buttonLabel;
 
     console.log("button label", this.props.buttonLabel, pathName, zombieData);
@@ -27,6 +28,7 @@ class ActionButton extends Component {
       <Link
         to={{
           pathname:  pathName ,
+          packNumber: packNumber,
           state:  zombieData
         }}
       >
