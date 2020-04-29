@@ -43,7 +43,7 @@ class ListPacks extends Component {
           <CardPack
             name= {pack.name}
             value = {pack.value}
-            page = {pack.page}
+            page = {"/cardPack1"}
             packNumber={i + 1}
           />
         );

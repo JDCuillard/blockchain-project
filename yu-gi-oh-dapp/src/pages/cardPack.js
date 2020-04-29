@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Card, Grid, Input, Segment, Pagination, Menu } from "semantic-ui-react";
+import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
 import { connect } from "react-redux";
 import PlayingCard from "../components/card";
 import ActionButton from "../components/ActionButton";
+import { Menu } from "semantic-ui-react";
 
 function mapStateToProps(state) {
   return {
@@ -12,11 +13,14 @@ function mapStateToProps(state) {
   };
 }
 
-class CardPack1 extends Component {
+class CardPack extends Component {
   state = {
     CardTable: [],
     activePage: 1,
-    totalPages: Math.ceil(40 / 10)
+    totalPages: Math.ceil(40 / 10),
+    title: "",
+    packInfo: {}
+
   };
 
   componentDidMount = async () => {
@@ -32,17 +36,23 @@ class CardPack1 extends Component {
      this.makeCards();
    };
 
+
   makeCards = async () => {
 
     var request = new XMLHttpRequest();
     request.open("GET", "../../static/cardData/cardinfo.json", false);
-    request.send(null)
+    request.send(null);
     let cardInformation = JSON.parse(request.responseText);
 
-    const pack = [69140098,3573512,46821314,31709826,31987274,67371383,87303357,86281779,12953226,21888494,
-                        57882509,29549364,82432018,19827717,18605135,21598948,94163677,5494820,33550694,69954399,
-                        95220856,65475294,28358902,90147755,53530069,22419772,58818411,21297224,58696829,84080939,
-                        57579381,32541773,67105242,66989694,41855169,40133511,77527210,40916023,45894482,44072894];
+    let packNumber = this.props.location.packNumber;
+
+    let requestPackInfo = new XMLHttpRequest();
+    requestPackInfo.open("GET", "../../static/cardData/cardPack.json", false);
+    requestPackInfo.send(null);
+    let packInfo = JSON.parse(requestPackInfo.responseText)[packNumber];
+    this.setState({ packInfo });
+
+
     let cardTable = [];
     for (
       var i = this.state.activePage * 10 - 10;
@@ -52,11 +62,11 @@ class CardPack1 extends Component {
       try {
         cardTable.push(
           <PlayingCard
-            name = {cardInformation[pack[i]]["name"]}
-            id = {pack[i]}
-            desc = {cardInformation[pack[i]]["desc"]}
-            small_image_link = {cardInformation[pack[i]]["card_images"]["image_url_small"]}
-            image_link = {cardInformation[pack[i]]["card_images"]["image_url"]}
+            name = {cardInformation[packInfo["cards"][i]]["name"]}
+            id = {packInfo["cards"][i]}
+            desc = {cardInformation[packInfo["cards"][i]]["desc"]}
+            small_image_link = {cardInformation[packInfo["cards"][i]]["card_images"]["image_url_small"]}
+            image_link = {cardInformation[packInfo["cards"][i]]["card_images"]["image_url"]}
           />
         );
       } catch {
@@ -67,32 +77,37 @@ class CardPack1 extends Component {
   };
 
   render() {
-    const buyPack3 = (
+    const buyPack = (
       <div>
-      {" "}
-      Buy Pack <br /> x ether{" "}
+        {" "}
+        Buy Pack <br /> {this.state.packInfo["price"]} ether{" "}
       </div>
     );
     return (
       <div>
-        <Menu style={{ marginTop: "10px", backgroundColor: "Transperent" }}>
-          <Menu.Item>
-            <h2> Labyrinth of Nightmare </h2>
-          </Menu.Item>
-          <Menu.Item>
-            Labyrinth of Nightmare is a Booster Pack that is an amalgamation
-            <br/> of the Japanese sets Labyrinth of Nightmare and Spell of Mask.
-          </Menu.Item>
-          <Menu.Item position="right">
-            <ActionButton
-              pathname="/AttackZombie"
-              buttonLabel={buyPack3}
-              data={this.props}
-              packNumber={3}
-            />
-          </Menu.Item>
-        </Menu>
+        <table>
+          <tr>
+            <td>
+              <h2> {this.state.packInfo["title"]} </h2>
+            </td>
+            <td width="100px">
+              <ActionButton
+                pathname="/AttackZombie"
+                buttonLabel={buyPack}
+                data={this.props}
+                packNumber={this.props.location.packNumber}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {this.state.packInfo["desc"]}
+            </td>
+          </tr>
+        </table>
         <hr />
+
+
         <Grid columns={2} verticalAlign="middle">
           <Grid.Column>
             <Segment secondary>
@@ -115,10 +130,10 @@ class CardPack1 extends Component {
           </Grid.Column>
         </Grid>
         <br /> <br />
-        <Card.Group> {this.state.cardTable} </Card.Group>
+        <Card.Group centered items={this.state.cardTable}> {this.state.cardTable} </Card.Group>
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(CardPack1);
+export default connect(mapStateToProps)(CardPack);
