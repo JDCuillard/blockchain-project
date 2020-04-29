@@ -11,8 +11,8 @@ import { Menu, Header } from "semantic-ui-react";
 function mapStateToProps(state) {
   return {
     userAddress: state.userAddress,
-    userZombieCount: state.userZombieCount,
-    totalZombieCount: state.totalZombieCount
+    userCardCount: state.userCardCount,
+    totalAuctionCount: state.totalAuctionCount
   };
 }
 
@@ -36,7 +36,7 @@ class TopBar extends Component {
           </Menu.Item>
 
           <Menu.Item>
-            <Link to={{ pathname: "/ZombieInventory" }}>
+            <Link to={{ pathname: "/AuctionHouse" }}>
               <Button primary>Auction House</Button>
             </Link>
           </Menu.Item>

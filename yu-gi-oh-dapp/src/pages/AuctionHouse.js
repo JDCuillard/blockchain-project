@@ -8,12 +8,14 @@ import {
 } from "semantic-ui-react";
 import { connect } from "react-redux";
 
+import zombieCard from "../components/zombieCard";
+
 import auctionCard from "../components/auctionCard";
 
 function mapStateToProps(state) {
   return {
     CZ: state.CZ,
-    totalZombieCount: state.totalZombieCount,
+    totalAuctionCount: state.totalAuctionCount,
     userAddress: state.userAddress
   };
 }
@@ -22,7 +24,7 @@ class AuctionHouse extends Component {
   state = {
     auctionTable: [],
     activePage: 1,
-    totalPages: Math.ceil(this.props.userAddress. / 9)
+    totalPages: Math.ceil(this.props.totalAuctionCount / 9)
   };
 
   componentDidMount = async () => {
@@ -61,7 +63,7 @@ class AuctionHouse extends Component {
     ) {
       try {
         auctionTable.push(
-            <AuctionCard
+            <auctionCard
               name={cards[i].name}
               desc={cards[i].desc}
               value={cards[i].value}
@@ -74,7 +76,7 @@ class AuctionHouse extends Component {
 
     // create a set of zombie cards in the state table
 
-    let zombieTable = [];
+  /*  let zombieTable = [];
     for (let i = 0; i < zList.length; i++) {
       let myDate = new Date(zList[i].readyTime * 1000).toLocaleString();
       zombieTable.push(
@@ -91,17 +93,17 @@ class AuctionHouse extends Component {
           myOwner={this.props.userAddress === zOwner[i]}
         />
       );
-    }
-    this.setState({ zombieTable });
+    }*/
+    this.setState({ auctionTable });
   };
 
   render() {
     return (
       <div>
         <hr />
-        <h2> Complete Zombie Inventory </h2>
-        The zombies you own have a yellow background; clicking anywhere on a
-        yellow card will bring up a list of actions you can perform.
+        <h2> Welcome to the Auction House </h2>
+        All cards in here are cards listed on auction by other users. Click on any desired card you may make a
+        bid on this card. Once an auction has concluded the final person to make a bid will have won the auction.
         <hr />
         <Grid columns={2} verticalAlign="middle">
           <Grid.Column>
@@ -133,4 +135,4 @@ class AuctionHouse extends Component {
   }
 }
 
-export default connect(mapStateToProps)(ZombieInventory);
+export default connect(mapStateToProps)(AuctionHouse);

@@ -77,4 +77,4 @@ class auctionCard extends Component {
   }
 }
 
-export default PlayingCard;
+export default auctionCard;

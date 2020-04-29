@@ -21,11 +21,120 @@ contract Cardbank is Ownable{
     mapping (address => uint) ownerCardCount;
 
     //All Auction cards are stored here
-    Card[] public CardsAtAuction;
+    Card[] private CardsAtAuction;
     mapping (address => uint) auctionCardOwnerToId;
 
     // All Auction contract address are stored here
     address[] newContracts;
+    // Trading offer
+    struct TradingOffer{
+        uint cardid;
+        uint forCardid;
+        address sender;
+    }
+    uint private offerNumber = 1;
+    uint private offerAccepted = uint(0);
+    mapping(uint => TradingOffer) private offNumTradingOffer;
+     // Selling offer
+    struct sellingOffer{
+        uint cardid;
+        uint etherValue; // Wei
+        address sender;
+    }
+    uint private sellingOfferNumber = 1;
+    uint private SellingOfferAccepted = uint(0);
+    mapping(uint => sellingOffer) private SellOffNumSellingOffer;
+
+    // Allow you to create a selling offer _etherValue is in wei
+    function _initiateSellingOffer( address _sender, uint _cardId, uint _etherValue) public
+    {
+        require(cardOwnedByUser(_cardId, _sender) == true, "You don't Own that card");
+        sellingOffer memory offer;
+        offer.cardid = _cardId;
+        offer.etherValue = _etherValue;
+        offer.sender = _sender;
+        SellOffNumSellingOffer[sellingOfferNumber++] = offer;
+    }
+
+    // Will give you all the valid selling card offers
+    function sellingOffers() external view returns(uint[] memory , uint[] memory, uint[] memory ) {
+        uint[] memory _cardId = new uint[](sellingOfferNumber-1-SellingOfferAccepted);
+        uint[] memory _cost = new uint[](sellingOfferNumber-1-SellingOfferAccepted);
+        uint[] memory _offerNumber = new uint[](sellingOfferNumber-1-SellingOfferAccepted);
+        uint counter = 0;
+        for (uint i = 1; i < sellingOfferNumber; i++) {
+            if(SellOffNumSellingOffer[i].cardid != uint(0)){
+            _cardId[counter] = SellOffNumSellingOffer[i].cardid;
+            _cost[counter] = SellOffNumSellingOffer[i].etherValue;
+            _offerNumber[counter] = i;
+            counter++;
+            }
+        }
+        return (_cardId, _cost,_offerNumber);
+    }
+
+    // Allow you to accept the selling offer
+    function acceptSellingOffer(uint _offerNumber) public payable returns (bool){
+        sellingOffer memory offer = SellOffNumSellingOffer[_offerNumber];
+        require(offer.etherValue ==msg.value, "Not Enough Ether");
+        require(cardOwnedByUser(offer.cardid, offer.sender) == true, "Trader don't Own that card now");
+
+        cardOwner[cardUniqueID(offer.cardid, offer.sender)] = msg.sender;
+        ownerCardCount[msg.sender] = ownerCardCount[msg.sender].add(1);
+        ownerCardCount[offer.sender] = ownerCardCount[offer.sender].sub(1);
+        address payable offerHolder = address(uint160(offer.sender));
+        offerHolder.transfer(offer.etherValue);
+        SellingOfferAccepted.add(1);
+        delete SellOffNumSellingOffer[_offerNumber];
+    }
+
+    // Allow you to create a trading offer
+    function _initiateTradingOffer( address _sender, uint _tradeCard, uint _forCard) public
+    {
+        require(cardOwnedByUser(_tradeCard, _sender) == true, "You don't Own that card");
+        TradingOffer memory offer;
+        offer.cardid = _tradeCard;
+        offer.forCardid = _forCard;
+        offer.sender = _sender;
+        offNumTradingOffer[offerNumber++] = offer;
+    }
+
+    // Will give you all the valid trading card offers
+    function TradingOffers() external view returns(uint[] memory , uint[] memory, uint[] memory ) {
+        uint[] memory _cardId = new uint[](offerNumber-1-offerAccepted);
+        uint[] memory _forCardId = new uint[](offerNumber-1-offerAccepted);
+        uint[] memory _offerNumber = new uint[](offerNumber-1-offerAccepted);
+        uint counter = 0;
+        for (uint i = 1; i < offerNumber; i++) {
+            if(offNumTradingOffer[i].cardid != uint(0)){
+            _cardId[counter] = offNumTradingOffer[i].cardid;
+            _forCardId[counter] = offNumTradingOffer[i].forCardid;
+            _offerNumber[counter] = i;
+            counter++;
+            }
+        }
+        return (_cardId, _forCardId,_offerNumber);
+    }
+
+    // Allow you to accept the trading offer
+    function acceptTradingOffer(uint _offerNumber) external  {
+        TradingOffer memory offer = offNumTradingOffer[_offerNumber];
+        require(cardOwnedByUser(offer.forCardid, msg.sender) == true, "You don't Own that card");
+        require(cardOwnedByUser(offer.cardid, offer.sender) == true, "Trader don't Own that card now");
+
+        cardOwner[cardUniqueID(offer.cardid, offer.sender)] = msg.sender;
+        cardOwner[cardUniqueID(offer.forCardid, msg.sender)] = offer.sender;
+        offerAccepted.add(1);
+        delete offNumTradingOffer[_offerNumber];
+    }
+
+    // Tranfer a card to a friend
+    function transferACardToFriend(uint _cardId, address _to) external  {
+        require(cardOwnedByUser(_cardId, msg.sender) == true, "You don't Own that card");
+        cardOwner[cardUniqueID(_cardId, msg.sender)] = _to;
+        ownerCardCount[_to] = ownerCardCount[_to].add(1);
+        ownerCardCount[msg.sender] = ownerCardCount[msg.sender].sub(1);
+    }
 
     function _createNewCard(uint _tokenid, uint _cardid ) internal{
         uint id = cards.push(Card(_tokenid, _cardid)) -1;
@@ -154,5 +263,4 @@ contract Cardbank is Ownable{
     }
 
 }
-    
 
