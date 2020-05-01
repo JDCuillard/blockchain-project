@@ -56,21 +56,21 @@ class App extends Component {
     // **************************************************************************
 
     render() {
-        return (
-            <Provider store={store}>
-            <HashRouter>
+      return (
+        <Provider store={store}>
+          <HashRouter>
             <Container>
-            <TopBar state={this.state} />
-        <div>
-        <Route exact path="/" component={Greeting} />
-        <Route exact path="/myCards" component={MyCards} />
-        <Route exact path="/ListPacks" component={ListPacks} />
-        <Route exact path="/cardPack1" component={CardPack} />
-        <Route exact path="/AuctionHouse" component={AuctionHouse} />
-        <Route exact path="/BuyPack" component={BuyPack} />
-        </div>
-        </Container>
-        </HashRouter>
+              <TopBar state={this.state} />
+              <div>
+                <Route exact path="/" component={Greeting} />
+                <Route exact path="/myCards" component={MyCards} />
+                <Route exact path="/ListPacks" component={ListPacks} />
+                <Route exact path="/cardPack1" component={CardPack} />
+                <Route exact path="/AuctionHouse" component={AuctionHouse} />
+                <Route exact path="/BuyPack" component={BuyPack} />
+              </div>
+            </Container>
+          </HashRouter>
         </Provider>
     );
     }
