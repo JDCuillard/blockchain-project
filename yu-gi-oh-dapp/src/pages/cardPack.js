@@ -3,7 +3,6 @@ import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
 import { connect } from "react-redux";
 import PlayingCard from "../components/card";
 import ActionButton from "../components/ActionButton";
-import { Menu } from "semantic-ui-react";
 
 function mapStateToProps(state) {
   return {
@@ -92,7 +91,7 @@ class CardPack extends Component {
             </td>
             <td width="125px" align="right">
               <ActionButton
-                pathname="/AttackZombie"
+                pathname="/BuyPack"
                 buttonLabel={buyPack}
                 data={this.props}
                 packNumber={this.props.location.packNumber}
