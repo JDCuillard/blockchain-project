@@ -13,13 +13,7 @@ import Greeting from "./pages/Greeting";
 import MyCards from "./pages/MyCards";
 import ListPacks from "./pages/ListPacks";
 import CardPack from "./pages/cardPack";
-
-import ZombieInventory from "./pages/ZombieInventory";
-import AttackZombie from "./pages/AttackZombie";
-import FeedOnKitty from "./pages/FeedOnKitty";
-import ChangeName from "./pages/ChangeName";
-import LevelUp from "./pages/LevelUp";
-import TransferZombie from "./pages/TransferZombie";
+import BuyPack from "./pages/BuyPack";
 
 import store from "./redux/store";
 
@@ -70,13 +64,7 @@ class App extends Component {
               <Route exact path="/myCards" component={MyCards} />
               <Route exact path="/ListPacks" component={ListPacks} />
               <Route exact path="/cardPack1" component={CardPack} />
-              <Route exact path="/ZombieInventory" component={ZombieInventory} />
-              {/* routes used in zombie action modal */}
-              <Route exact path="/AttackZombie" component={AttackZombie} />
-              <Route exact path="/FeedOnKitty" component={FeedOnKitty} />
-              <Route exact path="/ChangeName" component={ChangeName} />
-              <Route exact path="/LevelUp" component={LevelUp} />
-              <Route exact path="/TransferZombie" component={TransferZombie} />
+              <Route exact path="/BuyPack" component={BuyPack} />
             </div>
           </Container>
         </HashRouter>
