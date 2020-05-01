@@ -12,7 +12,7 @@ import TopBar from "./components/TopBar";
 import Greeting from "./pages/Greeting";
 import MyCards from "./pages/MyCards";
 import ListPacks from "./pages/ListPacks";
-import CardPack1 from "./pages/cardPack";
+import CardPack from "./pages/cardPack";
 import AuctionHouse from "./pages/AuctionHouse";
 
 import AttackZombie from "./pages/AttackZombie";

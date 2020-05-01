@@ -8,9 +8,7 @@ import {
 } from "semantic-ui-react";
 import { connect } from "react-redux";
 
-import zombieCard from "../components/zombieCard";
-
-import auctionCard from "../components/auctionCard";
+import AuctionCard from "../components/auctionCard";
 
 function mapStateToProps(state) {
   return {
@@ -42,12 +40,6 @@ class AuctionHouse extends Component {
   }
 
   makeCards = async () => {
-    let cList = [];
-    let cOwner = [];
-
-    await this.setState({ auctionTable: [] }); // clear screen while waiting for data
-
-
     const cards = [{name : "Card 1", desc: "description for card 1", value: "a"},
       {name : "Card 2", desc: "description for card 2", value: "b"},
       {name : "Card 3", desc: "description for card 3", value: "c"},
@@ -62,16 +54,18 @@ class AuctionHouse extends Component {
       i++
     ) {
       try {
+        let pack = cards[i];
         auctionTable.push(
-            <auctionCard
-              name={cards[i].name}
-              desc={cards[i].desc}
-              value={cards[i].value}
-            />
+          <AuctionCard
+            name = {pack.name}
+            desc = {pack.desc}
+            value = {pack.value}
+          />
         )
       } catch (err) {
         break;
       }
+      this.setState({ auctionTable }); // clear screen while waiting for data
     }
 
     // create a set of zombie cards in the state table
@@ -127,9 +121,7 @@ class AuctionHouse extends Component {
           </Grid.Column>
         </Grid>
         <br /> <br />
-        <div>
           <Card.Group>{this.state.auctionTable}</Card.Group>
-        </div>
       </div>
     );
   }

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
 import ActionButton from "./ActionButton";
 import CardContent from "./cardContent";
-import CardPreview from "./cardPreview";
 import CardPackImage from "./cardPackImage";
+import PlayingCard from "./card";
 
-class auctionCard extends Component {
+class auctionCard extends PlayingCard {
   state = {
     modalOpen: false
   };
@@ -42,7 +42,6 @@ class auctionCard extends Component {
           data-tip="Click on me to view auction details"
           onClick={e => this.modalOpen(e)}
         >
-          <CardPreview card={this.props} />
         </a>
 
         {/* a modal is like an "alert", it's a popup that greys out the lower screen and displays its content on top of everything */}
