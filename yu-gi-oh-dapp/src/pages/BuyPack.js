@@ -3,9 +3,8 @@
 //
 
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Button, Header, Icon, Form, Message } from "semantic-ui-react";
+import { Button, Header, Icon, Form} from "semantic-ui-react";
 import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
 import CardPack from "../components/cardPack";
 import PlayingCard from "../components/card";
@@ -18,7 +17,7 @@ function mapStateToProps(state) {
   };
 }
 
-class AttackZombie extends Component {
+class BuyPack extends Component {
   state = {
     value: "",
     message: "",
@@ -31,7 +30,6 @@ class AttackZombie extends Component {
     totalPages: Math.ceil(40 / 6)
   };
 
-  // get a random cryptokitty image and the hungry zombie ID when the component mounts
 
   componentDidMount = async () => {
     await this.makeCards();
@@ -195,4 +193,4 @@ class AttackZombie extends Component {
   }
 }
 
-export default connect(mapStateToProps)(AttackZombie);
+export default connect(mapStateToProps)(BuyPack);
