@@ -32,32 +32,39 @@ class MyCards extends Component {
   };
 
   makeCards = async () => {
-    const cards = [{name : "Card 1", desc: "description for card 1", value: "a"},
-                       {name : "Card 2", desc: "description for card 2", value: "b"},
-                       {name : "Card 3", desc: "description for card 3", value: "c"},
-                       {name : "Card 4", desc: "description for card 4", value: "d"},
-                       {name : "Card 5", desc: "description for card 5", value: "e"}
-                     ];
-    let cardTable = [];
-    for (
-      var i = 0;
-      i < cards.length;
-      i++
-    ) {
-      try {
-        let pack = cards[i];
-        cardTable.push(
-          <PlayingCard
-            name= {pack.name}
-            desc = {pack.desc}
-            value = {pack.value}
-          />
-        );
-      } catch {
-        break;
-      }
-    }
-    this.setState({ cardTable });
+    const myCards = await this.props.CZ.methods
+      .getCardsByOwner(this.props.userAddress)
+      .call();
+
+    // let cardTable = [];
+    // for (
+    //   var i = this.state.activePage * 10 - 10;
+    //   i < this.state.activePage * 10;
+    //   i++
+    // ) {
+    //   try {
+    //     let c = myCards[i];
+    //     let oneCard = await this.props.CZ.methods.cards(c).call();
+    //
+    //     var request = new XMLHttpRequest();
+    //     request.open("GET", "../../static/cardData/cardinfo.json", false);
+    //     request.send(null);
+    //     let cardInformation = JSON.parse(request.responseText);
+    //
+    //     cardTable.push(
+    //       <PlayingCard
+    //         name = {cardInformation[oneCard.cardId]["name"]}
+    //         id = {oneCard.cardId}
+    //         desc = {cardInformation[oneCard.cardId]["desc"]}
+    //         small_image_link = {cardInformation[oneCard.cardId]["card_images"]["image_url_small"]}
+    //         image_link = {cardInformation[oneCard.cardId]["card_images"]["image_url"]}
+    //       />
+    //     );
+    //   } catch {
+    //     break;
+    //   }
+    // }
+    // this.setState({ cardTable });
   };
 
   render() {
