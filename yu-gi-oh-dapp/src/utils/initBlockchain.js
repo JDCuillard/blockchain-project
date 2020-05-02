@@ -1,4 +1,5 @@
 import CryptoZombiesContract from "../CryptoZombies.json";
+import CardBankContract from "../Cardbank.json"
 import store from "../redux/store";
 
 //import blockchainInitialized from "../redux/modules/czAppDuck";  // for some unknown reason, the duck doesn't work!

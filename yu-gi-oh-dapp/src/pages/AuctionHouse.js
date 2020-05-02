@@ -65,29 +65,7 @@ class AuctionHouse extends Component {
       } catch (err) {
         break;
       }
-      this.setState({ auctionTable }); // clear screen while waiting for data
     }
-
-    // create a set of zombie cards in the state table
-
-  /*  let zombieTable = [];
-    for (let i = 0; i < zList.length; i++) {
-      let myDate = new Date(zList[i].readyTime * 1000).toLocaleString();
-      zombieTable.push(
-        <ZombieCard
-          key={i}
-          zombieId={this.state.activePage * 9 - 9 + i}
-          zombieName={zList[i].name}
-          zombieDNA={zList[i].dna}
-          zombieLevel={zList[i].level}
-          zombieReadyTime={myDate}
-          zombieWinCount={zList[i].winCount}
-          zombieLossCount={zList[i].lossCount}
-          zombieOwner={zOwner[i]}
-          myOwner={this.props.userAddress === zOwner[i]}
-        />
-      );
-    }*/
     this.setState({ auctionTable });
   };
 

@@ -54,6 +54,7 @@ class PlayingCard extends Component {
           </Modal.Content>
 
           <Modal.Actions>
+      {/*<Button color="blue" onClick={} >*/}
             <Button color="red" onClick={this.handleClose} inverted>
               <Icon name="cancel" /> Close
             </Button>
