@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import getWeb3 from "./utils/getWeb3";
 import initBlockchain from "./utils/initBlockchain";
-import getZombieCount from "./utils/getZombieCount";
+import getCardCount from "./utils/getCardCount";
 
 import { HashRouter, Route } from "react-router-dom";
 import { Container } from "semantic-ui-react";
@@ -35,6 +35,7 @@ class App extends Component {
     try {
       const web3 = await getWeb3(); // from utils directory;  connect to metamask
       const data = await initBlockchain(web3);  // get contract instance and user address=
+      await getCardCount(data.CZ, data.userAddress);  // get user count and total count of cards
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -61,7 +62,7 @@ class App extends Component {
             <div>
               <Route exact path="/" component={Greeting} />
               <Route exact path="/myCards" component={MyCards} />
-              <Route exact path="/ListPacks" component={ListPacks} />
+              <Route exact path="/ListPacks" component={ListPacks} state={this.state}/>
               <Route exact path="/cardPack1" component={CardPack} />
               <Route exact path="/BuyPack" component={BuyPack} />
             </div>

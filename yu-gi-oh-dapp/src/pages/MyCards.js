@@ -6,15 +6,16 @@ import PlayingCard from "../components/card";
 function mapStateToProps(state) {
   return {
     CZ: state.CZ,
+    userCardCount: state.userCardCount,
     userAddress: state.userAddress
   };
 }
 
 class MyCards extends Component {
   state = {
-    ZombieTable: [],
+    cardTable: [],
     activePage: 1,
-    totalPages: Math.ceil(this.props.userZombieCount / 10)
+    totalPages: Math.ceil(20 / 10)
   };
 
   componentDidMount = async () => {
@@ -32,39 +33,38 @@ class MyCards extends Component {
   };
 
   makeCards = async () => {
+    var request = new XMLHttpRequest();
+    request.open("GET", "../../static/cardData/cardinfo.json", false);
+    request.send(null);
+    let cardInformation = JSON.parse(request.responseText);
+
+
     const myCards = await this.props.CZ.methods
       .getCardsByOwner(this.props.userAddress)
       .call();
 
-    // let cardTable = [];
-    // for (
-    //   var i = this.state.activePage * 10 - 10;
-    //   i < this.state.activePage * 10;
-    //   i++
-    // ) {
-    //   try {
-    //     let c = myCards[i];
-    //     let oneCard = await this.props.CZ.methods.cards(c).call();
-    //
-    //     var request = new XMLHttpRequest();
-    //     request.open("GET", "../../static/cardData/cardinfo.json", false);
-    //     request.send(null);
-    //     let cardInformation = JSON.parse(request.responseText);
-    //
-    //     cardTable.push(
-    //       <PlayingCard
-    //         name = {cardInformation[oneCard.cardId]["name"]}
-    //         id = {oneCard.cardId}
-    //         desc = {cardInformation[oneCard.cardId]["desc"]}
-    //         small_image_link = {cardInformation[oneCard.cardId]["card_images"]["image_url_small"]}
-    //         image_link = {cardInformation[oneCard.cardId]["card_images"]["image_url"]}
-    //       />
-    //     );
-    //   } catch {
-    //     break;
-    //   }
-    // }
-    // this.setState({ cardTable });
+    let cardTable = [];
+    for (
+      var i = this.state.activePage * 10 - 10;
+      i < this.state.activePage * 10;
+      i++
+    ) {
+      try {
+
+        cardTable.push(
+          <PlayingCard
+            name = {cardInformation[myCards[i]]["name"]}
+            id = {myCards[i]}
+            desc = {cardInformation[myCards[i]]["desc"]}
+            small_image_link = {cardInformation[myCards[i]]["card_images"]["image_url_small"]}
+            image_link = {cardInformation[myCards[i]]["card_images"]["image_url"]}
+          />
+        );
+      } catch {
+        break;
+      }
+    }
+    this.setState({ cardTable });
   };
 
   render() {
