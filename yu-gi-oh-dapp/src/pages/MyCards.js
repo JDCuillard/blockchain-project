@@ -6,7 +6,6 @@ import PlayingCard from "../components/card";
 function mapStateToProps(state) {
   return {
     CZ: state.CZ,
-    userZombieCount: state.userZombieCount,
     userAddress: state.userAddress
   };
 }

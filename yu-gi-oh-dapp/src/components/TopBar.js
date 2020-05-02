@@ -47,6 +47,9 @@ class TopBar extends Component {
             </Link>
           </Menu.Item>
         </Menu>
+        <div className="center">
+        </div>
+        Your account address: {this.props.userAddress}
       </div>
     );
   }

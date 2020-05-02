@@ -7,7 +7,6 @@ import ActionButton from "../components/ActionButton";
 function mapStateToProps(state) {
   return {
     CZ: state.CZ,
-    totalZombieCount: state.totalZombieCount,
     userAddress: state.userAddress
   };
 }

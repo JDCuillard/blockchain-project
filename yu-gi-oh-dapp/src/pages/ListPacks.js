@@ -6,7 +6,6 @@ import CardPack from "../components/cardPack";
 function mapStateToProps(state) {
   return {
     CZ: state.CZ,
-    userZombieCount: state.userZombieCount,
     userAddress: state.userAddress
   };
 }
@@ -23,9 +22,7 @@ class ListPacks extends Component {
   };
 
   makeCardPackCards = async () => {
-    const myZombies = await this.props.CZ.methods
-      .getZombiesByOwner(this.props.userAddress)
-      .call();
+
     const cardPacks = [{name : "Legend of Blue Eyes White Dragon", value: "a", page: "/cardPack1"},
                        {name : "Pharaoh's Servant", value: "b", page: "/cardPack2"},
                        {name : "Labyrinth of Nightmare", value: "c", page: "/cardPack3"},

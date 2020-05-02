@@ -36,8 +36,7 @@ class App extends Component {
   componentDidMount = async () => {
     try {
       const web3 = await getWeb3(); // from utils directory;  connect to metamask
-      const data = await initBlockchain(web3);  // get contract instance and user address
-      await getZombieCount(data.CZ, data.userAddress);  // get user count and total count of zombies
+      const data = await initBlockchain(web3);  // get contract instance and user address=
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
