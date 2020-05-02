@@ -100,32 +100,21 @@ class BuyPack extends Component {
     });
     try {
       await this.props.CZ.methods
-        .attack(this.state.zombieId, this.state.value) // contains the zombie ID and the target zombie ID
+        .purchasePack(this.props.location.packNumber) // contains the zombie ID and the target zombie ID
         .send({
+          value: this.props.web3Instance.utils.toWei("1", "ether"),
           from: this.props.userAddress
         });
-      let newZombie = await this.props.CZ.methods
-        .zombies(this.state.zombieId)
-        .call();
-
-      if (this.state.zombieLevel < newZombie.level) {
-        this.setState({
-          loading: false,
-          message: "Battle complete.  YOU WON!!!!"
-        });
-        getZombieCount(this.props.CZ, this.props.userAddress);
-      } else {
-        this.setState({
-          loading: false,
-          message: "Battle complete.  WAHHHH.  YOU LOST!!!!"
-        });
-      }
+      this.setState({
+        loading: false,
+        message: "You have successfully purchased the pack"
+      });
     } catch (err) {
       this.setState({
         loading: false,
         errorMessage: err.message,
         message:
-          "User rejected transaction or Cool Down period has not expired."
+          "An Error occured when trying to buy a pack."
       });
     }
   };

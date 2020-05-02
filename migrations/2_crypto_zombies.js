@@ -1,4 +1,4 @@
-var CryptoZombies = artifacts.require("./CryptoZombies.sol");
+var Auction = artifacts.require("./Auction.sol");
 module.exports = function(deployer) {
-    deployer.deploy(CryptoZombies);
+    deployer.deploy(Auction);
 };
