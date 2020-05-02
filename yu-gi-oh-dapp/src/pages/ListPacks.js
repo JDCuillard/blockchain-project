@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 
 class ListPacks extends Component {
   state = {
-    ZombieTable: [],
+    cardPackTable: [],
     activePage: 1,
     totalPages: Math.ceil(this.props.userZombieCount / 9)
   };

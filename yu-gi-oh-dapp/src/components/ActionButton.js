@@ -9,27 +9,22 @@ class ActionButton extends Component {
 
 
   render() {
-    const zombieData = {
-      zombieName: this.props.data.zombieName,
-      zombieId: this.props.data.zombieId,
-      zombieDNA: this.props.data.zombieDNA,
-      zombieLevel: this.props.data.zombieLevel,
-      zombieReadyTime: this.props.data.zombieReadyTime,
-      zombieWinCount: this.props.data.zombieWinCount,
-      zombieLossCount: this.props.data.zombieLossCount
+    const cardData = {
+      cardid: this.props.data.cardid,
+      tokenid: this.props.data.tokenId,
     };
 
     const pathName = this.props.pathname;
     const packNumber = this.props.packNumber;
     const buttonLabel = this.props.buttonLabel;
 
-    console.log("button label", this.props.buttonLabel, pathName, zombieData);
+    console.log("button label", this.props.buttonLabel, pathName, cardData);
     return (
       <Link
         to={{
           pathname:  pathName ,
           packNumber: packNumber,
-          state:  zombieData
+          state:  cardData
         }}
       >
         <Button primary disabled={this.props.disableMe}> {buttonLabel} </Button>

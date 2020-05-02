@@ -10,7 +10,8 @@ import { Menu, Header } from "semantic-ui-react";
 
 function mapStateToProps(state) {
   return {
-    userAddress: state.userAddress
+    userAddress: state.userAddress,
+    userCardCount: state.userCardCount
   };
 }
 
@@ -48,6 +49,8 @@ class TopBar extends Component {
         <div className="center">
         </div>
         Your account address: {this.props.userAddress}
+        <br/>
+        Total Owned Cards: {this.props.userCardCount}
       </div>
     );
   }

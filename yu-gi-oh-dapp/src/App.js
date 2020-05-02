@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import getWeb3 from "./utils/getWeb3";
 import initBlockchain from "./utils/initBlockchain";
+import getCardCount from "./utils/getCardCount";
 
 import { HashRouter, Route } from "react-router-dom";
 import { Container } from "semantic-ui-react";
@@ -37,6 +38,7 @@ class App extends Component {
     try {
       const web3 = await getWeb3(); // from utils directory;  connect to metamask
       const data = await initBlockchain(web3);  // get contract instance and user address=
+      await getCardCount(data.CZ, data.userAddress);  // get user count and total count of cards
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(

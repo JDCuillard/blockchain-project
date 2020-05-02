@@ -15,7 +15,7 @@
 
 const WEB3_INITIALIZED = "WEB3_INITIALIZED";
 const BLOCKCHAIN_INITIALIZED = "BLOCKCHAIN_INITIALIZED";
-const ZOMBIE_COUNT = "ZOMBIE_COUNT";
+const CARD_COUNT = "CARD_COUNT";
 
 //  Actions and Action Creator Functions
 //
@@ -51,8 +51,8 @@ const initialState = {
   web3Instance: null,
   CZ: {}, // contract instance with methods, etc.
   userAddress: "",
-  userZombieCount: 0,
-  totalZombieCount: 0
+  userCards: [],
+  userCardCount: 0
 };
 
 // Reducers
@@ -80,14 +80,12 @@ export default function reducer(state = initialState, action) {
       return Object.assign({}, state, {
         CZ: action.payload.CZ,
         userAddress: action.payload.userAddress,
-        userZombieCount: action.payload.userZombieCount
       });
 
-    case ZOMBIE_COUNT:
+    case CARD_COUNT:
       return Object.assign({}, state, {
-        totalZombieCount: action.payload.totalZombieCount,
-        userZombieCount: action.payload.userZombieCount
-      });
+        userCardCount: action.payload.userCardCount
+    });
 
     default:
       return state;
