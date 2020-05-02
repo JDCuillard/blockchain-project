@@ -13,7 +13,6 @@ import AuctionCard from "../components/auctionCard";
 function mapStateToProps(state) {
   return {
     CZ: state.CZ,
-    totalAuctionCount: state.totalAuctionCount,
     userAddress: state.userAddress
   };
 }

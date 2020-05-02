@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import getWeb3 from "./utils/getWeb3";
 import initBlockchain from "./utils/initBlockchain";
-import getZombieCount from "./utils/getZombieCount";
 
 import { HashRouter, Route } from "react-router-dom";
 import { Container } from "semantic-ui-react";
@@ -15,6 +14,7 @@ import ListPacks from "./pages/ListPacks";
 import CardPack from "./pages/cardPack";
 import AuctionHouse from "./pages/AuctionHouse";
 import BuyPack from "./pages/BuyPack";
+import CreateAuction from "./pages/CreateAuction";
 
 
 import store from "./redux/store";
@@ -67,6 +67,7 @@ class App extends Component {
                 <Route exact path="/cardPack1" component={CardPack} />
                 <Route exact path="/AuctionHouse" component={AuctionHouse} />
                 <Route exact path="/BuyPack" component={BuyPack} />
+                <Route exact path="/CreateAuction" component={CreateAuction} />
               </div>
             </Container>
           </HashRouter>

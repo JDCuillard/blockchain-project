@@ -1,5 +1,3 @@
-import CryptoZombiesContract from "../CryptoZombies.json";
-import CardBankContract from "../Cardbank.json"
 import StoreContract from "../Store.json";
 
 import store from "../redux/store";

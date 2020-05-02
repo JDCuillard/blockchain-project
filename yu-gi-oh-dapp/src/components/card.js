@@ -3,6 +3,7 @@ import { Icon, Card, Header, Modal, Button } from "semantic-ui-react";
 import ReactTooltip from "react-tooltip";
 import CardContent from "./cardContent";
 import CardImage from "./cardImage";
+import ActionButton from "./ActionButton";
 
 class PlayingCard extends Component {
   state = {
@@ -21,6 +22,12 @@ class PlayingCard extends Component {
     //     <CardContent card={this.props} />
     //   </Card>
     // );
+    const MakeAuction = (
+      <div>
+        {" "}
+         Set up for auction{" "}
+      </div>
+  );
     return (
       <Card style={{ backgroundColor: "LightYellow", width:"200px"}} raised>
 
@@ -51,10 +58,14 @@ class PlayingCard extends Component {
 
           <Modal.Content>
             <CardContent card={this.props} />
+            <ActionButton
+            pathname="/CreateAuction"
+            buttonLabel={MakeAuction}
+            data={this.props}
+            />
           </Modal.Content>
 
           <Modal.Actions>
-      {/*<Button color="blue" onClick={} >*/}
             <Button color="red" onClick={this.handleClose} inverted>
               <Icon name="cancel" /> Close
             </Button>

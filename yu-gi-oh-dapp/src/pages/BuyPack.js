@@ -8,7 +8,6 @@ import { Button, Header, Icon, Form} from "semantic-ui-react";
 import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
 import CardPack from "../components/cardPack";
 import PlayingCard from "../components/card";
-import getZombieCount from "../utils/getZombieCount";
 
 function mapStateToProps(state) {
   return {
