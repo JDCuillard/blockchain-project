@@ -1,4 +1,3 @@
-import CryptoZombiesContract from "../CryptoZombies.json";
 import StoreContract from "../Store.json";
 
 import store from "../redux/store";
@@ -27,12 +26,6 @@ async function initBlockchain(web3) {
 
   // Get contract instance
   const networkId = await web3.eth.net.getId();
-  // const deployedNetwork = CryptoZombiesContract.networks[networkId];
-  // const instance = new web3.eth.Contract(
-  //   CryptoZombiesContract.abi,
-  //   deployedNetwork && deployedNetwork.address
-  // );
-
   const deployedNetwork = StoreContract.networks[networkId];
   const instance = new web3.eth.Contract(
     StoreContract.abi,

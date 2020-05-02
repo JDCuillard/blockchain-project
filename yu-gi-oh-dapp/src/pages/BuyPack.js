@@ -8,10 +8,10 @@ import { Button, Header, Icon, Form} from "semantic-ui-react";
 import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
 import CardPack from "../components/cardPack";
 import PlayingCard from "../components/card";
-import getZombieCount from "../utils/getZombieCount";
 
 function mapStateToProps(state) {
   return {
+    web3Instance: state.web3Instance,
     CZ: state.CZ,
     userAddress: state.userAddress
   };
@@ -102,7 +102,7 @@ class BuyPack extends Component {
       await this.props.CZ.methods
         .purchasePack(this.props.location.packNumber) // contains the zombie ID and the target zombie ID
         .send({
-          value: this.props.web3Instance.utils.toWei("1", "ether"),
+          value: this.props.web3Instance.utils.toWei("1.0", "ether"),
           from: this.props.userAddress
         });
       this.setState({
@@ -113,8 +113,7 @@ class BuyPack extends Component {
       this.setState({
         loading: false,
         errorMessage: err.message,
-        message:
-          "An Error occured when trying to buy a pack."
+        message: "Transaction Incomplete"
       });
     }
   };

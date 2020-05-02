@@ -10,9 +10,7 @@ import { Menu, Header } from "semantic-ui-react";
 
 function mapStateToProps(state) {
   return {
-    userAddress: state.userAddress,
-    userZombieCount: state.userZombieCount,
-    totalZombieCount: state.totalZombieCount
+    userAddress: state.userAddress
   };
 }
 
