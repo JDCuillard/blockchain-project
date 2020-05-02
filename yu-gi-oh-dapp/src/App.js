@@ -23,37 +23,37 @@ import store from "./redux/store";
 //  This is the main application page; routing is handled to render other pages in the application
 
 class App extends Component {
-    // define a state variable for important connectivity data to the blockchain
-    // this will then be put into the REDUX store for retrieval by other pages
+  // define a state variable for important connectivity data to the blockchain
+  // this will then be put into the REDUX store for retrieval by other pages
 
 
-    // **************************************************************************
-    //
-    // React will call this routine only once when App page loads; do initialization here
-    //
-    // **************************************************************************
+  // **************************************************************************
+  //
+  // React will call this routine only once when App page loads; do initialization here
+  //
+  // **************************************************************************
 
-    componentDidMount = async () => {
-        try {
-            const web3 = await getWeb3(); // from utils directory;  connect to metamask
-            const data = await initBlockchain(web3);  // get contract instance and user address
-            await getZombieCount(data.CZ, data.userAddress);  // get user count and total count of zombies
-        } catch (error) {
-            // Catch any errors for any of the above operations.
-            alert(
-                `Failed to load web3, accounts, or contract. Check console for details.`
-            );
+  componentDidMount = async () => {
+    try {
+      const web3 = await getWeb3(); // from utils directory;  connect to metamask
+      const data = await initBlockchain(web3);  // get contract instance and user address
+      await getZombieCount(data.CZ, data.userAddress);  // get user count and total count of zombies
+    } catch (error) {
+      // Catch any errors for any of the above operations.
+      alert(
+        `Failed to load web3, accounts, or contract. Check console for details.`
+      );
 
-            console.log(error);
-        }
-    };
+      console.log(error);
+    }
+  };
 
-    // **************************************************************************
-    //
-    // main render routine for App component;
-    //      contains route info to navigate between pages
-    //
-    // **************************************************************************
+  // **************************************************************************
+  //
+  // main render routine for App component;
+  //      contains route info to navigate between pages
+  //
+  // **************************************************************************
 
     render() {
       return (
@@ -73,7 +73,7 @@ class App extends Component {
           </HashRouter>
         </Provider>
     );
-    }
+  }
 }
 
 export default App;
