@@ -14,7 +14,7 @@ class MyCards extends Component {
   state = {
     ZombieTable: [],
     activePage: 1,
-    totalPages: Math.ceil(this.props.userZombieCount / 9)
+    totalPages: Math.ceil(this.props.CZ.ownerCardCount / 9)
   };
 
   componentDidMount = async () => {
@@ -32,9 +32,12 @@ class MyCards extends Component {
   };
 
   makeCards = async () => {
+    console.log(this.props.CZ.ownerCardCount);
+    let address = this.props.userAddres;
     const myCards = await this.props.CZ.methods
-      .getCardsByOwner(this.props.userAddress)
+      .getCardsByOwner(address)
       .call();
+    console.log(myCards);
 
     // let cardTable = [];
     // for (
