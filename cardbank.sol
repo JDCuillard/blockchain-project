@@ -155,6 +155,19 @@ contract Cardbank is Ownable{
         }
         return result;
     }
+    //Returns an array of token IDs owned by an account
+    function getCardsTokenByOwner(address _owner) external view returns (uint[] memory) {
+        uint[] memory result = new uint[](ownerCardCount[_owner]);
+        uint counter = 0;
+        for (uint i = 0; i < cards.length; i++) {
+          if (cardOwner[i] == _owner) {
+            result[counter] = cards[i].tokenid;
+            counter++;
+          }
+        }
+        return result;
+    }
+
 
     // Return the cards on Auction
     function cardsOnAuction() external view returns (uint[] memory) {
