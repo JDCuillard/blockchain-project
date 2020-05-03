@@ -4,7 +4,8 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Button, Header, Icon, Form} from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import {Button, Header, Icon, Form, Card} from "semantic-ui-react";
 import PlayingCard from "../components/card";
 
 function mapStateToProps(state) {
@@ -16,6 +17,7 @@ function mapStateToProps(state) {
 
 class CreateAuction extends Component {
     state = {
+        card: [],
         time: null,
         format: null,
         cardId: null,
@@ -30,11 +32,31 @@ class CreateAuction extends Component {
     }
 
     setAspects = async () => {
-        let cardId = this.props.id;
-        let tokenId = await this.props.CZ.methods
-            .cardUniqueID(cardId, this.props.userAddress)
-            .call();;
+        let cardId = +this.props.location.state.cardid;
+        let tokenId = +this.props.location.state.tokenid;
+
+        var request = new XMLHttpRequest();
+        request.open("GET", "../../static/cardData/cardinfo.json", false);
+        request.send(null);
+        let cardInformation = JSON.parse(request.responseText);
+
+        let card = [];
+
+        try {
+            card.push(
+            <PlayingCard
+            name = {cardInformation[cardId]["name"]}
+            id = {cardId}
+            token = {tokenId}
+            desc = {cardInformation[cardId]["desc"]}
+            small_image_link = {cardInformation[cardId]["card_images"]["image_url_small"]}
+            image_link = {cardInformation[cardId]["card_images"]["image_url"]}
+            />
+        );
+        } catch {        }
+
         this.setState({
+            card,
             cardId,
             tokenId
         });
@@ -66,15 +88,15 @@ class CreateAuction extends Component {
         }
     };
 
-
     render() {
         return (
             <div>
             <hr />
-            <h2> Welcome to the Auction House </h2>
-            All cards in here are cards listed on auction by other users. Click on any desired card you may make a
-            bid on this card. Once an auction has concluded the final person to make a bid will have won the auction.
+            <h2> Putting a Card up for Auction? </h2>
+            Here is where you set up a card to go onto auction. All you need to fill out is how long you would like the
+            auction to go on, and what format (Days, Hours, Minutes).
             <hr />
+        <Card.Group> {this.state.card} </Card.Group>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
             <Form.Field>
             <label>How long will this auction last?</label>
@@ -82,20 +104,26 @@ class CreateAuction extends Component {
                     placeholder="150"
                     onChange={event =>
                         this.setState({
-                            time: event.target.time})
+                            time: +event.target.value})
                             }
                 />
             <label>Days, hours, minutes </label>
-            <select value={this.state.value} onChange={event => this.setState({format: +this.state.value})}>
+            <select value={this.state.format} onChange={event => this.setState({format: +event.target.value})}>
                 <option value="0">Days</option>
                 <option value="1">Hours</option>
                 <option value="2">Minutes</option>
             </select>
             </Form.Field>
             <Button primary type="submit" loading={this.state.loading}>
+            {console.log(this.state)}
                 <Icon name="check" />
                 Place Auction
             </Button>
+            <Link to="/MyCards">
+                <Button color="red" inverted>
+                <Icon name="cancel" /> Close
+            </Button>
+            </Link>
             </Form>
         </div>
     );

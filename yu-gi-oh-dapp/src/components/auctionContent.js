@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Card } from "semantic-ui-react";
 import CardImage from "./cardImage";
 
-class CardContent extends Component {
+class AuctionContent extends Component {
   truncate = (text, startChars, endChars) => {
     if (text.length > 12) {
       var start = text.substring(0, startChars);

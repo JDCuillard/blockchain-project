@@ -3,7 +3,7 @@ import { Icon, Card, Header, Modal, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
 import ActionButton from "./ActionButton";
-import CardContent from "./cardContent";
+import AuctionContent from "./auctionContent";
 import CardPackImage from "./cardPackImage";
 import PlayingCard from "./card";
 
@@ -61,7 +61,7 @@ class auctionCard extends PlayingCard {
               buttonLabel={cancelAuctionButton}
               data={this.props}
             />
-            <CardContent card={this.props} />
+            <AuctionContent card={this.props} />
           </Modal.Content>
 
           <Modal.Actions>
