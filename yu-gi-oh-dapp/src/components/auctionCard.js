@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Icon, Card, Header, Modal, Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
-import CardContent from "./cardContent";
-import CardImage from "./cardImage";
 import ActionButton from "./ActionButton";
+import AuctionContent from "./auctionContent";
+import CardPackImage from "./cardPackImage";
+import PlayingCard from "./card";
 
-class PlayingCard extends Component {
+class auctionCard extends PlayingCard {
   state = {
     modalOpen: false
   };
@@ -17,35 +19,29 @@ class PlayingCard extends Component {
   handleClose = () => this.setState({ modalOpen: false });
 
   render() {
-    // return (
-    //   <Card style={{ backgroundColor: "LightYellow" }} raised>
-    //     <CardContent card={this.props} />
-    //   </Card>
-    // );
-    const MakeAuction = (
+    const bidButton = (
       <div>
         {" "}
-         Set up for auction{" "}
+        Make a higher bid! (" "}
       </div>
-  );
-    return (
-      <Card style={{ backgroundColor: "LightYellow", width:"200px"}} raised>
+     );
 
+    const cancelAuctionButton = (
+      <div>
+        {" "}
+        End your current auction early! (" "}
+      </div>
+    );
+
+    return (
+      <Card style={{ backgroundColor: "LightYellow" }} raised>
         <ReactTooltip delayShow={400} />
 
         <a
           href="javascript:;"
-          data-tip="Click on me to view details about this card"
+          data-tip="Click on me to view auction details"
           onClick={e => this.modalOpen(e)}
         >
-          <Card.Content>
-            <div>
-              <CardImage image_link={this.props.small_image_link} />{" "}
-            </div>
-            <Card.Header>
-              <b>{this.props.name}</b>
-            </Card.Header>
-          </Card.Content>
         </a>
 
         {/* a modal is like an "alert", it's a popup that greys out the lower screen and displays its content on top of everything */}
@@ -53,16 +49,19 @@ class PlayingCard extends Component {
         <Modal open={this.state.modalOpen} onClose={this.handleClose}>
           <Header
             icon="browser"
-            content="Here are details about this card"
+            content="Here are details about the card you clicked"
           />
 
           <Modal.Content>
-            <CardContent card={this.props} />
             <ActionButton
-            pathname="/CreateAuction"
-            buttonLabel={MakeAuction}
-            data={this.props}
+              buttonLabel={bidButton}
+              data={this.props}
             />
+            <ActionButton
+              buttonLabel={cancelAuctionButton}
+              data={this.props}
+            />
+            <AuctionContent card={this.props} />
           </Modal.Content>
 
           <Modal.Actions>
@@ -77,4 +76,4 @@ class PlayingCard extends Component {
   }
 }
 
-export default PlayingCard;
+export default auctionCard;

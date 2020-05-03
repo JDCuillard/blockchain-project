@@ -1,6 +1,3 @@
-
-
-
 # zombie
 
 This is a blockchain game based on the CryptoZombies smart contract.  

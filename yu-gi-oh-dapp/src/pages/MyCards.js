@@ -42,6 +42,9 @@ class MyCards extends Component {
     const myCards = await this.props.CZ.methods
       .getCardsByOwner(this.props.userAddress)
       .call();
+    const tokens = await this.props.CZ.methods
+        .getCardsTokenByOwner(this.props.userAddress)
+        .call();
 
     let cardTable = [];
     for (
@@ -50,11 +53,11 @@ class MyCards extends Component {
       i++
     ) {
       try {
-
         cardTable.push(
           <PlayingCard
             name = {cardInformation[myCards[i]]["name"]}
             id = {myCards[i]}
+            token = {tokens[i]}
             desc = {cardInformation[myCards[i]]["desc"]}
             small_image_link = {cardInformation[myCards[i]]["card_images"]["image_url_small"]}
             image_link = {cardInformation[myCards[i]]["card_images"]["image_url"]}

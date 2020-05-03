@@ -149,7 +149,7 @@ contract MyAuction is Auction{
 
     function buyCard() public
     {
-        require(now > auction_end ,"You can't buy Car, the auction is still open");
+        require(now > auction_end ,"You can't buy Card, the auction is still open");
         require(msg.sender == highestBidder, "Only highestBidder can buy the card");
 
         uint amount;

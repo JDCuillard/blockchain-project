@@ -32,7 +32,6 @@ async function initBlockchain(web3) {
     deployedNetwork && deployedNetwork.address
   );
 
-
   // put state data into the REDUX store for easy access from other pages and components
 
   let data = {

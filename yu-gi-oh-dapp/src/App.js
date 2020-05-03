@@ -13,7 +13,10 @@ import Greeting from "./pages/Greeting";
 import MyCards from "./pages/MyCards";
 import ListPacks from "./pages/ListPacks";
 import CardPack from "./pages/cardPack";
+import AuctionHouse from "./pages/AuctionHouse";
 import BuyPack from "./pages/BuyPack";
+import CreateAuction from "./pages/CreateAuction";
+
 
 import store from "./redux/store";
 
@@ -53,22 +56,24 @@ class App extends Component {
   //
   // **************************************************************************
 
-  render() {
-    return (
-      <Provider store={store}>
-        <HashRouter>
-          <Container>
-            <TopBar state={this.state} />
-            <div>
-              <Route exact path="/" component={Greeting} />
-              <Route exact path="/myCards" component={MyCards} />
-              <Route exact path="/ListPacks" component={ListPacks} state={this.state}/>
-              <Route exact path="/cardPack1" component={CardPack} />
-              <Route exact path="/BuyPack" component={BuyPack} />
-            </div>
-          </Container>
-        </HashRouter>
-      </Provider>
+    render() {
+      return (
+        <Provider store={store}>
+          <HashRouter>
+            <Container>
+              <TopBar state={this.state} />
+              <div>
+                <Route exact path="/" component={Greeting} />
+                <Route exact path="/myCards" component={MyCards} />
+                <Route exact path="/ListPacks" component={ListPacks} />
+                <Route exact path="/cardPack1" component={CardPack} />
+                <Route exact path="/AuctionHouse" component={AuctionHouse} />
+                <Route exact path="/BuyPack" component={BuyPack} />
+                <Route exact path="/CreateAuction" component={CreateAuction} />
+              </div>
+            </Container>
+          </HashRouter>
+        </Provider>
     );
   }
 }

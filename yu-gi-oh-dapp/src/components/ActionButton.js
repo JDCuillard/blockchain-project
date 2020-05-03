@@ -10,8 +10,8 @@ class ActionButton extends Component {
 
   render() {
     const cardData = {
-      cardid: this.props.data.cardid,
-      tokenid: this.props.data.tokenId,
+      cardid: +this.props.data.id,
+      tokenid: +this.props.data.token,
     };
 
     const pathName = this.props.pathname;
