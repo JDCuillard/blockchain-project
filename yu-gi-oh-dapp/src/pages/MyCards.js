@@ -15,7 +15,7 @@ class MyCards extends Component {
   state = {
     cardTable: [],
     activePage: 1,
-    totalPages: Math.ceil(this.props.CZ.ownerCardCount / 9)
+    totalPages: Math.ceil(this.props.userCardCount / 10)
   };
 
   componentDidMount = async () => {
@@ -42,7 +42,6 @@ class MyCards extends Component {
     const myCards = await this.props.CZ.methods
       .getCardsByOwner(this.props.userAddress)
       .call();
-    console.log(myCards);
 
     let cardTable = [];
     for (
@@ -51,11 +50,12 @@ class MyCards extends Component {
       i++
     ) {
       try {
-
+        let card = await this.props.CZ.method.cards(myCards[i]).call();
         cardTable.push(
           <PlayingCard
             name = {cardInformation[myCards[i]]["name"]}
             id = {myCards[i]}
+            token = {card.tokenid}
             desc = {cardInformation[myCards[i]]["desc"]}
             small_image_link = {cardInformation[myCards[i]]["card_images"]["image_url_small"]}
             image_link = {cardInformation[myCards[i]]["card_images"]["image_url"]}

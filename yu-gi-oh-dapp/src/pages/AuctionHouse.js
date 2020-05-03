@@ -39,26 +39,20 @@ class AuctionHouse extends Component {
   }
 
   makeCards = async () => {
-    const cards = [{name : "Card 1", desc: "description for card 1", value: "a"},
-      {name : "Card 2", desc: "description for card 2", value: "b"},
-      {name : "Card 3", desc: "description for card 3", value: "c"},
-      {name : "Card 4", desc: "description for card 4", value: "d"},
-      {name : "Card 5", desc: "description for card 5", value: "e"}
-    ];
+    const auctions = await this.props.CZ.methods
+        .giveMeAddresses().call();
     let auctionTable = [];
 
     for (
       let i = 0;
-      i < cards.length;
+      i < auctions.length;
       i++
     ) {
       try {
-        let pack = cards[i];
+        let auction = auctions[i];
         auctionTable.push(
           <AuctionCard
-            name = {pack.name}
-            desc = {pack.desc}
-            value = {pack.value}
+            address = {auction}
           />
         )
       } catch (err) {

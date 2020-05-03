@@ -5,8 +5,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Button, Header, Icon, Form} from "semantic-ui-react";
-import { Card, Grid, Input, Segment, Pagination } from "semantic-ui-react";
-import CardPack from "../components/cardPack";
 import PlayingCard from "../components/card";
 
 function mapStateToProps(state) {
@@ -32,8 +30,10 @@ class CreateAuction extends Component {
     }
 
     setAspects = async () => {
-        let cardId = 40374923;
-        let tokenId = 0;
+        let cardId = this.props.id;
+        let tokenId = await this.props.CZ.methods
+            .cardUniqueID(cardId, this.props.userAddress)
+            .call();;
         this.setState({
             cardId,
             tokenId
