@@ -59,8 +59,8 @@ class ListPacks extends Component {
             <h2> Buy a card pack! </h2>
           </Menu.Item>
           <Menu.Item>
-            40 pre-determined cards <br/>
-            5 random cards
+            There are 40 available cards in a card pack <br/>
+            Upon purchase, you will acquire 5 random cards out of those 40
           </Menu.Item>
         </Menu>
         <hr />
