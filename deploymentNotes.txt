@@ -1,0 +1,63 @@
+February 15, 2020
+
+2_crypto_zombies.js
+===================
+
+   Deploying 'CryptoZombies'
+   -------------------------
+   > transaction hash:    0xa0edea287f7930534d9f46af2f09ad2695374a9bcf422ea20c9fc8446d53af17
+   > Blocks: 0            Seconds: 12
+   > contract address:    0xd73619BF863c783632ef4C54f293a12Ee8B58Dcb
+   > block number:        5977004
+   > block timestamp:     1581795401
+   > account:             0x4327D8b79AB0499F81dD801db4365CdC914d6f3f
+   > balance:             318.504158348000001039
+   > gas used:            2018050
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.040361 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:            0.040361 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.0436445 ETH
+
+
+
+February 22, 2020   kluge for feeding on kitty and fixes to address payable
+
+3_crypto_zombies.js
+===================
+
+   Replacing 'CryptoZombies'
+   -------------------------
+   > transaction hash:    0x35e7a1b41ed0225e79706d0517a1b93179614352493f2ad42a4a2792291c03aa
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x507F69F39591AD68C2a3C82D41b4BCe6badFEF4F
+   > block number:        6017898
+   > block timestamp:     1582408966
+   > account:             0x4327D8b79AB0499F81dD801db4365CdC914d6f3f
+   > balance:             314.460979885000001039
+   > gas used:            1987079
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03974158 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.03974158 ETH
+
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.03974158 ETH
