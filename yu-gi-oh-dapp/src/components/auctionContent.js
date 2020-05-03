@@ -30,4 +30,4 @@ class AuctionContent extends Component {
     );
   }
 }
-export default CardContent;
+export default AuctionContent;

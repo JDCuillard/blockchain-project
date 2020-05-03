@@ -51,9 +51,9 @@ class AuctionHouse extends Component {
       try {
         let auction = auctions[i];
         auctionTable.push(
-          <AuctionCard
+          /*<AuctionCard
             address = {auction}
-          />
+          />*/
         )
       } catch (err) {
         break;
