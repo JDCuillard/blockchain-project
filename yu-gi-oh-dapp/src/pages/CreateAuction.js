@@ -5,7 +5,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import {Button, Header, Icon, Form, Card} from "semantic-ui-react";
+import {Button, Header, Icon, Form, Card, Grid, Segment, Input, Pagination} from "semantic-ui-react";
 import PlayingCard from "../components/card";
 
 function mapStateToProps(state) {
@@ -96,36 +96,45 @@ class CreateAuction extends Component {
             Here is where you set up a card to go onto auction. All you need to fill out is how long you would like the
             auction to go on, and what format (Days, Hours, Minutes).
             <hr />
-        <Card.Group> {this.state.card} </Card.Group>
-        <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
-            <Form.Field>
-            <label>How long will this auction last?</label>
-                <input
-                    placeholder="150"
-                    onChange={event =>
-                        this.setState({
-                            time: +event.target.value})
-                            }
-                />
-            <label>Days, hours, minutes </label>
-            <select value={this.state.format} onChange={event => this.setState({format: +event.target.value})}>
-                <option value="0">Days</option>
-                <option value="1">Hours</option>
-                <option value="2">Minutes</option>
-            </select>
-            </Form.Field>
-            <Button primary type="submit" loading={this.state.loading}>
-            {console.log(this.state)}
-                <Icon name="check" />
-                Place Auction
-            </Button>
-            <Link to="/MyCards">
-                <Button color="red" inverted>
-                <Icon name="cancel" /> Close
-            </Button>
-            </Link>
-            </Form>
-        </div>
+                <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
+                    <Form.Field>
+                        <Grid columns={3} verticalAlign="middle">
+                            <Grid.Column>
+                                <Segment secondary>
+                                    <Card.Group> {this.state.card} </Card.Group>
+                                </Segment>
+                            </Grid.Column>
+                            <Grid.Column>
+                                <label>How long will this auction last?</label>
+                                    <input
+                                    placeholder="150"
+                                    onChange={event =>
+                                    this.setState({
+                                        time: +event.target.value})
+                                    }
+                                    />
+                            </Grid.Column>
+                                <Grid.Column>
+                                    <label>Days, hours, minutes </label>
+                                    <select value={this.state.format} onChange={event => this.setState({format: +event.target.value})}>
+                                        <option value="0">Days</option>
+                                        <option value="1">Hours</option>
+                                        <option value="2">Minutes</option>
+                                    </select>
+                            </Grid.Column>
+                        </Grid>
+                    </Form.Field>
+                    <Button primary type="submit" loading={this.state.loading}>
+                        <Icon name="check" />
+                        Place Auction
+                    </Button>
+                    <Link to="/MyCards">
+                        <Button color="red" inverted>
+                        <Icon name="cancel" /> Close
+                    </Button>
+                    </Link>
+                </Form>
+            </div>
     );
     }
 }

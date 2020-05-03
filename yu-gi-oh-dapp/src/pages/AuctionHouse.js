@@ -19,9 +19,7 @@ function mapStateToProps(state) {
 
 class AuctionHouse extends Component {
   state = {
-    auctionTable: [],
-    activePage: 1,
-    totalPages: Math.ceil(this.props.totalAuctionCount / 9)
+    auctionTable: []
   };
 
   componentDidMount = async () => {
@@ -51,9 +49,10 @@ class AuctionHouse extends Component {
       try {
         let auction = auctions[i];
         auctionTable.push(
-          /*<AuctionCard
+          <AuctionCard
             address = {auction}
-          />*/
+            key = {i}
+          />
         )
       } catch (err) {
         break;
@@ -70,27 +69,6 @@ class AuctionHouse extends Component {
         All cards in here are cards listed on auction by other users. Click on any desired card you may make a
         bid on this card. Once an auction has concluded the final person to make a bid will have won the auction.
         <hr />
-        <Grid columns={2} verticalAlign="middle">
-          <Grid.Column>
-            <Segment secondary>
-              <div>activePage: {this.state.activePage}</div>
-              <Input
-                min={1}
-                max={this.state.totalPages}
-                onChange={this.handleInputChange}
-                type="range"
-                value={this.state.activePage}
-              />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Pagination
-              activePage={this.state.activePage}
-              onPageChange={this.onChange}
-              totalPages={this.state.totalPages}
-            />
-          </Grid.Column>
-        </Grid>
         <br /> <br />
           <Card.Group>{this.state.auctionTable}</Card.Group>
       </div>

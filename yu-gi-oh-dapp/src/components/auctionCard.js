@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
 import ActionButton from "./ActionButton";
 import AuctionContent from "./auctionContent";
-import CardPackImage from "./cardPackImage";
 import PlayingCard from "./card";
+import CardImage from "./cardImage";
 
 class auctionCard extends PlayingCard {
   state = {
@@ -19,6 +19,8 @@ class auctionCard extends PlayingCard {
   handleClose = () => this.setState({ modalOpen: false });
 
   render() {
+
+    console.log(this.props.address)
     const bidButton = (
       <div>
         {" "}
@@ -42,6 +44,14 @@ class auctionCard extends PlayingCard {
           data-tip="Click on me to view auction details"
           onClick={e => this.modalOpen(e)}
         >
+            <Card.Content>
+                <div>
+{/*<CardImage image_link={this.props.small_image_link} />{" "}*/}
+                </div>
+                <Card.Header>
+                    <b>{this.props.address}</b>
+                </Card.Header>
+            </Card.Content>
         </a>
 
         {/* a modal is like an "alert", it's a popup that greys out the lower screen and displays its content on top of everything */}
@@ -52,6 +62,11 @@ class auctionCard extends PlayingCard {
             content="Here are details about the card you clicked"
           />
 
+                <Card.Content>
+                <Card.Header>
+                <b>{this.props.address}</b>
+                </Card.Header>
+                </Card.Content>
           <Modal.Content>
             <ActionButton
               buttonLabel={bidButton}

@@ -58,6 +58,7 @@ class MyCards extends Component {
             name = {cardInformation[myCards[i]]["name"]}
             id = {myCards[i]}
             token = {tokens[i]}
+            key = {tokens[i]}
             desc = {cardInformation[myCards[i]]["desc"]}
             small_image_link = {cardInformation[myCards[i]]["card_images"]["image_url_small"]}
             image_link = {cardInformation[myCards[i]]["card_images"]["image_url"]}

@@ -19,13 +19,8 @@ class AuctionContent extends Component {
             <CardImage image_link={this.props.card.image_link} />{" "}
           </div>
           <Card.Header>
-            <b>{this.props.card.name}</b>
+            <b>{this.props.card.address}</b>
           </Card.Header>
-          <Card.Description>
-            ID: {this.props.card.id}<br />
-            token: {this.props.card.token}<br />
-            Description: {this.props.card.desc} <br />
-          </Card.Description>
         </Card.Content>
     );
   }

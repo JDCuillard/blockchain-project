@@ -5,7 +5,7 @@ class CardImage extends Component {
 
     render() {
             return (
-                <div class="pack-preview">
+                <div className="pack-preview">
                     <img  className="pack-preview" src={this.props.image_link} alt="card" />
                 </div>
             );
