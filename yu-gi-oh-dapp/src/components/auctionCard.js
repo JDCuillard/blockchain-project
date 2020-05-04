@@ -67,16 +67,16 @@ class auctionCard extends PlayingCard {
                 </Card.Header>
                 </Card.Content>
           <Modal.Content>
-            <ActionButton
-              buttonLabel={bidButton}
-              disableMe={true}
-              data={this.props}
-            />
-            <ActionButton
-              buttonLabel={cancelAuctionButton}
-              disableMe= {true}
-              data={this.props}
-            />
+                {/* // <ActionButton
+            //   buttonLabel={bidButton}
+            //   disableMe={true}
+            //   data={this.props}
+            // />
+            // <ActionButton
+            //   buttonLabel={cancelAuctionButton}
+            //   disableMe= {true}
+            //   data={this.props}
+            // /> */}
             <AuctionContent card={this.props} />
           </Modal.Content>
 
