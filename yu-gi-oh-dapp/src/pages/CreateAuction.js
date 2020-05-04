@@ -132,6 +132,7 @@ class CreateAuction extends Component {
                         <Button color="red" inverted>
                         <Icon name="cancel" /> Close
                     </Button>
+                    <h2>{this.state.message}</h2>
                     </Link>
                 </Form>
             </div>
