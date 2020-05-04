@@ -9,6 +9,7 @@ import CardImage from "./cardImage";
 
 class auctionCard extends PlayingCard {
   state = {
+    MA: this.props.contract,
     modalOpen: false
   };
 
@@ -19,19 +20,17 @@ class auctionCard extends PlayingCard {
   handleClose = () => this.setState({ modalOpen: false });
 
   render() {
-
-    console.log(this.props.address)
     const bidButton = (
       <div>
         {" "}
-        Make a higher bid! (" "}
+        Make a higher bid!
       </div>
      );
 
     const cancelAuctionButton = (
       <div>
         {" "}
-        End your current auction early! (" "}
+        End your current auction early!
       </div>
     );
 
@@ -46,10 +45,10 @@ class auctionCard extends PlayingCard {
         >
             <Card.Content>
                 <div>
-{/*<CardImage image_link={this.props.small_image_link} />{" "}*/}
+                    <CardImage image_link={this.props.small_image_link} />
                 </div>
                 <Card.Header>
-                    <b>{this.props.address}</b>
+                    <b>{this.props.name}</b>
                 </Card.Header>
             </Card.Content>
         </a>
@@ -70,10 +69,12 @@ class auctionCard extends PlayingCard {
           <Modal.Content>
             <ActionButton
               buttonLabel={bidButton}
+              disableMe={true}
               data={this.props}
             />
             <ActionButton
               buttonLabel={cancelAuctionButton}
+              disableMe= {true}
               data={this.props}
             />
             <AuctionContent card={this.props} />

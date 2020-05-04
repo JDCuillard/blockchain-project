@@ -52,7 +52,8 @@ const initialState = {
   CZ: {}, // contract instance with methods, etc.
   userAddress: "",
   userCards: [],
-  userCardCount: 0
+  userCardCount: 0,
+  web3: null
 };
 
 // Reducers
@@ -84,7 +85,8 @@ export default function reducer(state = initialState, action) {
 
     case CARD_COUNT:
       return Object.assign({}, state, {
-        userCardCount: action.payload.userCardCount
+        userCardCount: action.payload.userCardCount,
+        web3: action.payload.web3
     });
 
     default:

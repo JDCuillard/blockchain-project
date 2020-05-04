@@ -21,6 +21,11 @@ class AuctionContent extends Component {
           <Card.Header>
             <b>{this.props.card.address}</b>
           </Card.Header>
+          <Card.Description>
+              Time left: {this.props.card.remainingTime}<br />
+              ID: {this.props.card.id}<br />
+              token: {this.props.card.token}<br />
+          </Card.Description>
         </Card.Content>
     );
   }

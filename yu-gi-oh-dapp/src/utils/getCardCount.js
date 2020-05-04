@@ -14,7 +14,7 @@ function cardCount(data) {
 //  set up the blockchain shadow contract, user address, and user zombie count.  Put into redux store.
 //
 
-async function getCardCount(CZ, userAddress) {
+async function getCardCount(CZ, userAddress, web3) {
   // get number of zombies owned by the user account
 
   let userCards = (await CZ.methods // + convert a string to an integer
@@ -32,6 +32,7 @@ async function getCardCount(CZ, userAddress) {
   // put state data into the REDUX store for easy access from other pages and components
 
   let data = {
+    web3,
     userCards,
     userCardCount          //EC7 shorthand for totalZombieCount:totalZombieCount because of same variable name
   };
