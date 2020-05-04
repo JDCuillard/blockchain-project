@@ -7,11 +7,14 @@ import {
   Pagination,
 } from "semantic-ui-react";
 import { connect } from "react-redux";
+import MyAuction from "../MyAuction";
 
 import AuctionCard from "../components/auctionCard";
+import getWeb3 from "../utils/getWeb3";
 
 function mapStateToProps(state) {
   return {
+    web3Instance: state.web3Instance,
     CZ: state.CZ,
     userAddress: state.userAddress
   };
@@ -19,9 +22,8 @@ function mapStateToProps(state) {
 
 class AuctionHouse extends Component {
   state = {
-    auctionTable: [],
-    activePage: 1,
-    totalPages: Math.ceil(this.props.totalAuctionCount / 9)
+    myAuction: null,
+    auctionTable: []
   };
 
   componentDidMount = async () => {
@@ -29,19 +31,20 @@ class AuctionHouse extends Component {
   };
 
   onChange = async (e, pageInfo) => {
-    await this.setState({ activePage: pageInfo.activePage });
+    await this.setState({});
     this.makeCards();
   };
 
-  handleInputChange = async (e, { value }) => {
-      await this.setState({ activePage: value });
-      this.makeCards();
-  }
-
   makeCards = async () => {
+    var request = new XMLHttpRequest();
+    request.open("GET", "../../static/cardData/cardinfo.json", false);
+    request.send(null);
+    let cardInformation = JSON.parse(request.responseText);
+
     const auctions = await this.props.CZ.methods
         .giveMeAddresses().call();
     let auctionTable = [];
+    console.log(auctions);
 
     for (
       let i = 0;
@@ -50,10 +53,26 @@ class AuctionHouse extends Component {
     ) {
       try {
         let auction = auctions[i];
+        let MA = new this.props.web3Instance.eth.Contract(MyAuction.abi, auction);
+        console.log(MA);
+        const end = await MA.methods.auction_end().call();
+        const card = await MA.methods.MyCard().call();
+        let time = end - +this.now(Date.now());
+        let cID = +card.cardid;
         auctionTable.push(
-          /*<AuctionCard
+          <AuctionCard
+            contract = {MA}
             address = {auction}
-          />*/
+            name = {cardInformation[cID]["name"]}
+            endTime = {end}
+            key = {i}
+            id = {cID}
+            token = {+card.tokenid}
+            remainingTime = {time}
+            small_image_link = {cardInformation[cID]["card_images"]["image_url_small"]}
+            image_link = {cardInformation[cID]["card_images"]["image_url"]}
+            desc = {cardInformation[cID]["desc"]}
+          />
         )
       } catch (err) {
         break;
@@ -61,6 +80,12 @@ class AuctionHouse extends Component {
     }
     this.setState({ auctionTable });
   };
+
+  now(time) {
+    let t = time.toString();
+    let r = t.slice(0, t.length-3);
+    return r;
+  }
 
   render() {
     return (
@@ -70,27 +95,6 @@ class AuctionHouse extends Component {
         All cards in here are cards listed on auction by other users. Click on any desired card you may make a
         bid on this card. Once an auction has concluded the final person to make a bid will have won the auction.
         <hr />
-        <Grid columns={2} verticalAlign="middle">
-          <Grid.Column>
-            <Segment secondary>
-              <div>activePage: {this.state.activePage}</div>
-              <Input
-                min={1}
-                max={this.state.totalPages}
-                onChange={this.handleInputChange}
-                type="range"
-                value={this.state.activePage}
-              />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Pagination
-              activePage={this.state.activePage}
-              onPageChange={this.onChange}
-              totalPages={this.state.totalPages}
-            />
-          </Grid.Column>
-        </Grid>
         <br /> <br />
           <Card.Group>{this.state.auctionTable}</Card.Group>
       </div>

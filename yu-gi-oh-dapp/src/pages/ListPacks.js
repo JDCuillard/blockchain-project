@@ -13,8 +13,6 @@ function mapStateToProps(state) {
 class ListPacks extends Component {
   state = {
     cardPackTable: [],
-    activePage: 1,
-    totalPages: Math.ceil(this.props.userZombieCount / 9)
   };
 
   componentDidMount = async () => {
@@ -23,10 +21,10 @@ class ListPacks extends Component {
 
   makeCardPackCards = async () => {
 
-    const cardPacks = [{name : "Legend of Blue Eyes White Dragon", value: "a", page: "/cardPack1"},
-                       {name : "Pharaoh's Servant", value: "b", page: "/cardPack2"},
-                       {name : "Labyrinth of Nightmare", value: "c", page: "/cardPack3"},
-                       {name : "Ancient Sanctuary", value: "d", page: "/cardPack4"},
+    const cardPacks = [{name : "Legend of Blue Eyes White Dragon", value: "1 Eth"},
+                       {name : "Pharaoh's Servant", value: "1 Eth"},
+                       {name : "Labyrinth of Nightmare", value: "1 Eth"},
+                       {name : "Ancient Sanctuary", value: "1 Eth"},
                      ];
     let cardPackTable = [];
     for (
@@ -42,6 +40,7 @@ class ListPacks extends Component {
             value = {pack.value}
             page = {"/cardPack1"}
             packNumber={i + 1}
+            key={i}
           />
         );
       } catch {
@@ -64,28 +63,6 @@ class ListPacks extends Component {
           </Menu.Item>
         </Menu>
         <hr />
-        <Grid columns={2} verticalAlign="middle">
-          <Grid.Column>
-            <Segment secondary>
-              <div>activePage: {this.state.activePage}</div>
-              <Input
-                min={1}
-                max={this.state.totalPages}
-                onChange={this.handleInputChange}
-                type="range"
-                value={this.state.activePage}
-              />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Pagination
-              activePage={this.state.activePage}
-              onPageChange={this.onChange}
-              totalPages={this.state.totalPages}
-            />
-          </Grid.Column>
-        </Grid>
-        <br /> <br />
         <Card.Group> {this.state.cardPackTable} </Card.Group>
       </div>
     );

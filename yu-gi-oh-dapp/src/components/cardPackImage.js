@@ -10,8 +10,8 @@ class CardPackImage extends Component {
 
     render() {
             return (
-                <div class="pack-preview">
-                    <img  className="pack-preview" src={this.currentCardPack()} alt="card pack " />
+                <div className="pack-preview">
+                    <img  style={{height:"500px", width:"290px"}} className="pack-preview" src={this.currentCardPack()} alt="card pack " />
                 </div>
             );
 

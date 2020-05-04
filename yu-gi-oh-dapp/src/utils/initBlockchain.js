@@ -36,7 +36,7 @@ async function initBlockchain(web3) {
 
   let data = {
     CZ: instance,
-    userAddress,    // shorthand
+    userAddress    // shorthand
   };
 
   store.dispatch(blockchainInitialized(data));

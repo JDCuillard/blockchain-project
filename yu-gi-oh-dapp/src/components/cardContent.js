@@ -24,7 +24,6 @@ class CardContent extends Component {
           <Card.Description>
             ID: {this.props.card.id}<br />
             token: {this.props.card.token}<br />
-            Description: {this.props.card.desc} <br />
           </Card.Description>
         </Card.Content>
     );

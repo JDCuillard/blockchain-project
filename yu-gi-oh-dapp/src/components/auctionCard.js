@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
 import ActionButton from "./ActionButton";
 import AuctionContent from "./auctionContent";
-import CardPackImage from "./cardPackImage";
 import PlayingCard from "./card";
+import CardImage from "./cardImage";
 
 class auctionCard extends PlayingCard {
   state = {
+    MA: this.props.contract,
     modalOpen: false
   };
 
@@ -22,14 +23,14 @@ class auctionCard extends PlayingCard {
     const bidButton = (
       <div>
         {" "}
-        Make a higher bid! (" "}
+        Make a higher bid!
       </div>
      );
 
     const cancelAuctionButton = (
       <div>
         {" "}
-        End your current auction early! (" "}
+        End your current auction early!
       </div>
     );
 
@@ -42,6 +43,14 @@ class auctionCard extends PlayingCard {
           data-tip="Click on me to view auction details"
           onClick={e => this.modalOpen(e)}
         >
+            <Card.Content>
+                <div>
+                    <CardImage image_link={this.props.small_image_link} />
+                </div>
+                <Card.Header>
+                    <b>{this.props.name}</b>
+                </Card.Header>
+            </Card.Content>
         </a>
 
         {/* a modal is like an "alert", it's a popup that greys out the lower screen and displays its content on top of everything */}
@@ -52,15 +61,22 @@ class auctionCard extends PlayingCard {
             content="Here are details about the card you clicked"
           />
 
+                <Card.Content>
+                <Card.Header>
+                <b>{this.props.address}</b>
+                </Card.Header>
+                </Card.Content>
           <Modal.Content>
-            <ActionButton
-              buttonLabel={bidButton}
-              data={this.props}
-            />
-            <ActionButton
-              buttonLabel={cancelAuctionButton}
-              data={this.props}
-            />
+                {/* // <ActionButton
+            //   buttonLabel={bidButton}
+            //   disableMe={true}
+            //   data={this.props}
+            // />
+            // <ActionButton
+            //   buttonLabel={cancelAuctionButton}
+            //   disableMe= {true}
+            //   data={this.props}
+            // /> */}
             <AuctionContent card={this.props} />
           </Modal.Content>
 
